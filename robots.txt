@@ -1,4 +1,4 @@
-# Warriors Lens — robots policy
+# Warrior’s Lens — robots policy
 # Friendly to search engines, AI crawlers, and answer engines.
 
 User-agent: *
