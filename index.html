@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Warriors Lens — SSG Julio C. Hernandez | Combat Camera & Public Affairs</title>
+<meta name="description" content="Strategic visual storytelling and integrated marketing communications support for military and public affairs operations — by SSG Julio C. Hernandez, U.S. Army." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-size='16' font-weight='800' text-anchor='middle' fill='%23c9a961'%3EWL%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader" aria-hidden="true">
+  <div class="loader-rain" id="loaderRain"></div>
+  <div class="loader-center">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">warriors lens</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav-brand">
+    <span class="nav-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="40" height="40" fill="none">
+        <rect x="1" y="1" width="38" height="38" stroke="currentColor" stroke-width="1.2"/>
+        <text x="20" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="800" fill="currentColor">WL</text>
+      </svg>
+    </span>
+    <span class="nav-brand-text">
+      <span class="nav-brand-name">WARRIORS LENS</span>
+      <span class="nav-brand-sub">Combat Photographer &amp; Public Affairs Specialist</span>
+    </span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#work"><span class="num">01</span> Work</a>
+    <a href="#about"><span class="num">02</span> About</a>
+    <a href="#capabilities"><span class="num">03</span> Capabilities</a>
+    <a href="#coursework"><span class="num">04</span> Coursework</a>
+    <a href="#volunteer"><span class="num">05</span> Volunteer</a>
+    <a href="#experience"><span class="num">06</span> Experience</a>
+    <a href="#contact"><span class="num">07</span> Contact</a>
+  </nav>
+  <a href="#contact" class="nav-cta">Request Support</a>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-image" style="background-image: url('/media/img_07.jpg');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-flare"></div>
+
+  <div class="hero-meta">
+    <span class="meta-coord"><span class="dot"></span> 34.6834° N / 38.0234° E</span>
+    <span class="meta-vol">PORTFOLIO — VOL. 01</span>
+    <span class="meta-est">EST. 2013</span>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">SSG · U.S. Army · Combat Camera</p>
+    <h1 class="hero-title">
+      <span class="t-line">WARRIORS</span>
+      <span class="t-line t-italic">Lens.</span>
+    </h1>
+    <p class="hero-sub">Strategic visual storytelling and integrated marketing communications support for military and public affairs operations — by Julio&nbsp;C. Hernandez.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">View the work <span aria-hidden="true">↘</span></a>
+      <a href="#contact" class="btn btn-outline">Request Support</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">13+</div><div class="stat-label">Years in Service</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">Deployments</div></div>
+    <div class="stat"><div class="stat-num">Multi</div><div class="stat-label">TDY Missions</div></div>
+    <div class="stat"><div class="stat-num">483</div><div class="stat-label">DVIDS Assets</div></div>
+    <div class="stat stat-wide">
+      <div class="stat-label">Current Posting</div>
+      <div class="stat-text">Fort Meade, MD — 55th Combat Camera</div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 WORK -->
+<section class="section" id="work">
+  <div class="section-head">
+    <div>
+      <p class="section-label">01 / Selected Work</p>
+      <h2 class="section-title">Operational <em>archive.</em></h2>
+    </div>
+    <p class="section-desc">Frames captured across CONUS training, OCONUS deployments, and coalition operations — a curated selection of mission documentation published through DVIDS.</p>
+  </div>
+
+  <div class="work-toolbar">
+    <div class="filters" role="tablist">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="combat">Combat Camera</button>
+      <button class="filter" data-filter="joint">Joint Ops</button>
+      <button class="filter" data-filter="maritime">Maritime</button>
+      <button class="filter" data-filter="training">Training</button>
+      <button class="filter" data-filter="ceremony">Ceremony</button>
+    </div>
+    <div class="frame-count"><span id="frameCount">18</span> Frames</div>
+  </div>
+
+  <div class="work-grid" id="workGrid">
+    <!-- populated by JS -->
+  </div>
+
+  <div class="work-footer">
+    <a class="link-arrow" href="https://www.dvidshub.net/portfolio/1685082/julio-hernandez" target="_blank" rel="noopener">
+      View full archive on DVIDS — 483 published assets <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- 02 ABOUT -->
+<section class="section section-dark" id="about">
+  <p class="section-label">02 / About</p>
+  <h2 class="section-title-lg">From patrol leader to combat camera — <em>telling the Army's story.</em></h2>
+
+  <div class="about-grid">
+    <div class="about-photo">
+      <img src="/media/img_05.jpg" alt="SSG Julio C. Hernandez during operations" loading="lazy" />
+      <div class="about-photo-caption">
+        <span>SSG · U.S. Army</span>
+        <strong>JULIO C. HERNANDEZ</strong>
+      </div>
+    </div>
+    <div class="about-body">
+      <p>I am Staff Sgt. Julio C. Hernandez, U.S. Army. I enlisted in March 2013 as a Military Police Soldier, beginning my career at Fort Polk (now Fort Johnson), Louisiana, in roles from assistant gunner to senior patrol officer and team leader.</p>
+      <p>I served in Korea in 2016 as a patrol and radiotelephone operator, then at Fort Bliss, Texas, leading patrol teams. In 2018 I mobilized to the southern border in support of national defense operations — the experience that sharpened my eye for documentation in the field.</p>
+      <p>In 2020 I realigned with my real passion: visual storytelling. I attended the Mass Communications Foundations Course and the Graphic Design Course at DINFOS, then joined the 55th Signal Company (Combat Camera) at Fort Meade as a squad leader and Visual Information Specialist.</p>
+      <p>I deployed to Iraq and Syria as Combat Camera Team Lead for CJTF—Operation Inherent Resolve, and most recently served as Combat Camera Team Lead for Navy Central Command (NAVCENT) Public Affairs across joint and multinational operations. Now reclassified as a Public Affairs Specialist, I'm completing my B.S. in Integrated Marketing Communications at West Virginia University.</p>
+
+      <div class="role-cards">
+        <div class="role-card"><span class="check">✓</span><div><strong>Combat Camera Team Lead</strong><span>CJTF—OIR · Iraq &amp; Syria</span></div></div>
+        <div class="role-card"><span class="check">✓</span><div><strong>Combat Camera Team Lead</strong><span>NAVCENT Public Affairs</span></div></div>
+        <div class="role-card"><span class="check">✓</span><div><strong>55th Signal Co. (Combat Camera)</strong><span>Fort Meade, MD</span></div></div>
+        <div class="role-card"><span class="check">✓</span><div><strong>DINFOS</strong><span>Mass Comm &amp; Graphic Design</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 CAPABILITIES -->
+<section class="section" id="capabilities">
+  <div class="section-head">
+    <div>
+      <p class="section-label">03 / Capabilities</p>
+      <h2 class="section-title">Visual support, <em>end-to-end.</em></h2>
+    </div>
+    <p class="section-desc">Every deliverable is shaped by an Integrated Marketing Communications framework — from theater-level intent through final published asset.</p>
+  </div>
+
+  <div class="cap-grid">
+    <article class="cap-card">
+      <span class="cap-num">01</span>
+      <h3>Combat Camera</h3>
+      <p>Documenting kinetic and contingency operations across austere environments — embedded with line units, rotary platforms, and joint task forces.</p>
+      <ul>
+        <li>Operational Documentation</li>
+        <li>Low-Light &amp; Night Ops</li>
+        <li>Aerial / Rotary Platforms</li>
+        <li>Embedded Coverage</li>
+      </ul>
+    </article>
+    <article class="cap-card">
+      <span class="cap-num">02</span>
+      <h3>Public Affairs</h3>
+      <p>Strategic visual storytelling aligned with theater-level themes and messages — shaping narrative for unit, joint, and coalition audiences.</p>
+      <ul>
+        <li>Theater Messaging</li>
+        <li>Press &amp; Engagement Support</li>
+        <li>Joint &amp; Multinational PA</li>
+        <li>Crisis Communications</li>
+      </ul>
+    </article>
+    <article class="cap-card">
+      <span class="cap-num">03</span>
+      <h3>Multimedia &amp; IMC</h3>
+      <p>End-to-end campaign craft drawing on graduate-level Integrated Marketing Communications coursework at West Virginia University.</p>
+      <ul>
+        <li>Video Production &amp; Edit</li>
+        <li>Graphic Design (DINFOS)</li>
+        <li>Social Media Strategy</li>
+        <li>Hootsuite Certified</li>
+      </ul>
+    </article>
+    <article class="cap-card">
+      <span class="cap-num">04</span>
+      <h3>Portraiture</h3>
+      <p>Command portraits, change-of-responsibility coverage, and unit identity work — studio-quality light brought to the field.</p>
+      <ul>
+        <li>Command Portraits</li>
+        <li>Change of Command</li>
+        <li>Awards &amp; Ceremony</li>
+        <li>Environmental Portraits</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- 04 COURSEWORK -->
+<section class="section section-dark" id="coursework">
+  <div class="section-head">
+    <div>
+      <p class="section-label">04 / Graduate Coursework</p>
+      <h2 class="section-title">Academic <em>portfolio.</em></h2>
+    </div>
+    <p class="section-desc">Selected assignments from the M.S. in Integrated Marketing Communications at West Virginia University — strategy briefs, brand audits, and campaign decks built across JRL and MDIA coursework.</p>
+  </div>
+
+  <div class="course-toolbar">
+    <div class="filters" role="tablist">
+      <button class="filter active" data-cfilter="all">All</button>
+      <button class="filter" data-cfilter="JRL 432">JRL 432</button>
+      <button class="filter" data-cfilter="JRL 433">JRL 433</button>
+      <button class="filter" data-cfilter="MDIA 438">MDIA 438</button>
+      <button class="filter" data-cfilter="MDIA 348">MDIA 348</button>
+    </div>
+    <div class="frame-count"><span id="courseCount">11</span> Assignments</div>
+  </div>
+
+  <div class="course-grid" id="courseGrid"></div>
+
+  <div class="work-footer">
+    <a class="link-arrow" href="/files/Julio-C-Hernandez-Resume.docx" download>
+      Download full résumé (.docx) <span aria-hidden="true">↓</span>
+    </a>
+  </div>
+</section>
+
+<!-- 05 VOLUNTEER -->
+<section class="section" id="volunteer">
+  <p class="section-label">05 / Featured Project / Off-Duty</p>
+  <span class="tag">Pro Bono · Parent Volunteer</span>
+  <h2 class="section-title-lg">A Project for Pursuing Hill Elementary.</h2>
+  <p class="section-desc-wide">Off-duty parent volunteer work documenting school ceremonies, recognition events, and the small daily moments that tell a community's story. Creating smiles — one frame at a time.</p>
+
+  <div class="vol-meta">
+    <div><span>Project Type</span><strong>Volunteer · School Documentation</strong></div>
+    <div><span>Date</span><strong>Aug — Sep 2025</strong></div>
+    <div><span>Location</span><strong>Fort George G. Meade, MD</strong></div>
+    <div><span>Role</span><strong>Parent Volunteer Photographer</strong></div>
+  </div>
+
+  <div class="vol-photo" style="background-image:url('/media/img_14.jpg');" aria-label="Volunteer documentation imagery"></div>
+</section>
+
+<!-- 06 EXPERIENCE -->
+<section class="section section-dark" id="experience">
+  <div class="section-head">
+    <div>
+      <p class="section-label">06 / Service Record</p>
+      <h2 class="section-title">Service <em>history.</em></h2>
+    </div>
+    <p class="section-desc">A timeline of assignments, deployments, and formal training across thirteen years of service.</p>
+  </div>
+
+  <ol class="timeline">
+    <li>
+      <div class="t-date">Jun 2021 — Present</div>
+      <div class="t-body">
+        <h3>Public Affairs Specialist · Combat Camera Team Lead</h3>
+        <p class="t-org">55th Public Affairs Company (Combat Camera) · Fort Meade, MD</p>
+        <p>Reclassified into 46S after Visual Information service. Team Lead for CJTF—OIR (Iraq &amp; Syria) and NAVCENT Public Affairs across joint and multinational maritime operations. 483 published assets on DVIDS.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-date">2024 — 2025</div>
+      <div class="t-body">
+        <h3>Combat Camera Team Lead — NAVCENT PA</h3>
+        <p class="t-org">U.S. Naval Forces Central Command · 5th Fleet AOO</p>
+        <p>Documented PATFORSWA, USCGC Glen Harris operations, VBSS training with Pakistan Navy, and Combined Maritime Forces ceremonies including Egypt assuming command of CTF-154.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-date">2022 — 2023</div>
+      <div class="t-body">
+        <h3>Combat Camera Team Lead — CJTF-OIR</h3>
+        <p class="t-org">Combined Joint Task Force — Operation Inherent Resolve · Iraq &amp; Syria</p>
+        <p>Led visual documentation alongside Norwegian Telemark Battalion, Task Force Reaper, and partner-force training. Produced unit graphics, joint patrol coverage, and theater messaging assets.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-date">Nov 2017 — Nov 2021</div>
+      <div class="t-body">
+        <h3>Military Police</h3>
+        <p class="t-org">591st Military Police Company · Fort Bliss, TX</p>
+        <p>Patrol team leader. 2018 mobilization in support of southern border operations.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-date">Nov 2016 — Nov 2017</div>
+      <div class="t-body">
+        <h3>Military Police</h3>
+        <p class="t-org">142nd Military Police Company · Korea</p>
+        <p>Patrol and radiotelephone operator on the Korean peninsula.</p>
+      </div>
+    </li>
+    <li>
+      <div class="t-date">Aug 2013 — Nov 2015</div>
+      <div class="t-body">
+        <h3>Military Police</h3>
+        <p class="t-org">204th Military Police Company · Fort Polk (now Fort Johnson), LA</p>
+        <p>Enlisted March 2013. Roles from assistant gunner to senior patrol officer and team leader.</p>
+      </div>
+    </li>
+  </ol>
+
+  <div class="edu-grid">
+    <div class="edu-card">
+      <span class="edu-tag">Education · In Progress</span>
+      <h4>M.S. &amp; B.S., Integrated Marketing Communications</h4>
+      <p>West Virginia University · 2023 — Present</p>
+    </div>
+    <div class="edu-card">
+      <span class="edu-tag">Education</span>
+      <h4>Associate's, General Studies</h4>
+      <p>American Military University</p>
+    </div>
+    <div class="edu-card">
+      <span class="edu-tag">Certification · Oct 2025</span>
+      <h4>Social Media Marketing</h4>
+      <p>Hootsuite Academy · Credential ID 221785480</p>
+    </div>
+    <div class="edu-card">
+      <span class="edu-tag">Formal Training</span>
+      <h4>DINFOS — Mass Comm &amp; Graphic Design</h4>
+      <p>Defense Information School · 2020</p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 CONTACT -->
+<section class="section" id="contact">
+  <p class="section-label">07 / Request Support</p>
+  <h2 class="section-title-lg">Tell me the <em>mission.</em></h2>
+  <p class="section-desc-wide">For unit features, command portraits, training documentation, or coalition coverage — send a brief and I'll respond within 24 hours.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="info-block">
+        <span>Personal Email</span>
+        <a href="mailto:julioc.hernandez18@gmail.com">julioc.hernandez18@gmail.com</a>
+      </div>
+      <div class="info-block">
+        <span>Military Email</span>
+        <a href="mailto:julio.c.hernandez45.mil@army.mil">julio.c.hernandez45.mil@army.mil</a>
+      </div>
+      <div class="info-block">
+        <span>Posting</span>
+        <strong>Fort Meade, MD — 55th Combat Camera</strong>
+      </div>
+      <div class="contact-socials">
+        <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/in/julio-hernandez-634229282/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-outline btn-sm" href="https://www.dvidshub.net/portfolio/1685082/julio-hernandez" target="_blank" rel="noopener">DVIDS Portfolio</a>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <label>
+          <span>Name (Rank + Full)</span>
+          <input type="text" name="name" placeholder="SSG Julio Hernandez" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="name@army.mil" required />
+        </label>
+      </div>
+      <div class="form-row">
+        <label>
+          <span>Unit / Org</span>
+          <input type="text" name="unit" placeholder="Brigade / PAO / Agency" />
+        </label>
+        <label>
+          <span>Scope of Work</span>
+          <select name="scope">
+            <option>Combat Camera Coverage</option>
+            <option>Public Affairs Support</option>
+            <option>Command Portrait</option>
+            <option>Training Documentation</option>
+            <option>Multimedia / IMC Campaign</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+      <label class="full">
+        <span>Mission Brief</span>
+        <textarea name="brief" rows="5" placeholder="Dates, location, intent, audience, deliverables..."></textarea>
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Transmit Brief <span aria-hidden="true">→</span></button>
+        <span class="form-note"><span class="dot"></span> Secure · 24h response</span>
+      </div>
+      <div class="form-status" id="formStatus" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <h3 class="footer-tagline">Capture <em>the mission.</em></h3>
+      <p class="footer-sub">Mission-focused operational visual narratives.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#coursework">Coursework</a>
+      <a href="#volunteer">Volunteer</a>
+      <a href="#experience">Experience</a>
+    </nav>
+    <div class="footer-contact">
+      <a href="mailto:julioc.hernandez18@gmail.com">julioc.hernandez18@gmail.com</a>
+      <a href="mailto:julio.c.hernandez45.mil@army.mil">julio.c.hernandez45.mil@army.mil</a>
+      <span>Fort Meade, MD — 55th Combat Camera</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Julio C. Hernandez · Warriors Lens</span>
+    <span>U.S. Army Public Affairs · DVIDS Verified Contributor</span>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+  <figure class="lb-figure">
+    <img id="lbImg" alt="" />
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
