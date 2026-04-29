@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/warriorslens/static/css/main.eff21099.css",
+    "main.js": "/warriorslens/static/js/main.ec60b29c.js",
+    "index.html": "/warriorslens/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.eff21099.css",
+    "static/js/main.ec60b29c.js"
+  ]
+}
