@@ -61,41 +61,41 @@
 
 /* ---------- WORK GRID ---------- */
 const WORK_ITEMS = [
-  { src:'/media/img_07.jpg', title:'NAVCENT/PATFORSWA Conducts VBSS Training with Pakistan Navy', cat:'COMBAT CAMERA · 2024', filter:'combat', span:'feat',
+  { src:'media/img_07.jpg', title:'NAVCENT/PATFORSWA Conducts VBSS Training with Pakistan Navy', cat:'COMBAT CAMERA · 2024', filter:'combat', span:'feat',
     cap:'Visit, Board, Search, and Seizure (VBSS) training with the Pakistan Navy — close-quarters work in low light.' },
-  { src:'/media/img_00.jpg', title:'JEMX-25: Joint Forces Master Combat Medical Care', cat:'JOINT OPS · 2025', filter:'joint',
+  { src:'media/img_00.jpg', title:'JEMX-25: Joint Forces Master Combat Medical Care', cat:'JOINT OPS · 2025', filter:'joint',
     cap:'Joint Emergency Medicine Exercise 2025, Fort Cavazos, TX.' },
-  { src:'/media/img_02.jpg', title:'Military Medics Train in Realistic Scenarios — JEMX-25', cat:'TRAINING · 2025', filter:'training',
+  { src:'media/img_02.jpg', title:'Military Medics Train in Realistic Scenarios — JEMX-25', cat:'TRAINING · 2025', filter:'training',
     cap:'Realistic medical scenarios driving joint readiness.' },
-  { src:'/media/img_05.jpg', title:'Patrol Forces SW Asia — Water Survival Training', cat:'MARITIME · 2024', filter:'maritime', span:'tall',
+  { src:'media/img_05.jpg', title:'Patrol Forces SW Asia — Water Survival Training', cat:'MARITIME · 2024', filter:'maritime', span:'tall',
     cap:'PATFORSWA personnel during water survival qualification.' },
-  { src:'/media/img_06.jpg', title:'FASTCENT Conducts Tactical Live-Fire', cat:'COMBAT CAMERA · 2024', filter:'combat', span:'wide',
+  { src:'media/img_06.jpg', title:'FASTCENT Conducts Tactical Live-Fire', cat:'COMBAT CAMERA · 2024', filter:'combat', span:'wide',
     cap:'Fleet Anti-Terrorism Security Team Company, Central — live-fire ops.' },
-  { src:'/media/img_08.jpg', title:'USCGC Glen Harris — Pyrotechnics Training', cat:'MARITIME · 2024', filter:'maritime',
+  { src:'media/img_08.jpg', title:'USCGC Glen Harris — Pyrotechnics Training', cat:'MARITIME · 2024', filter:'maritime',
     cap:'5th Fleet AOO, training to maintain readiness.' },
-  { src:'/media/img_13.jpg', title:'PATFORSWA — Change of Command Ceremony', cat:'CEREMONY · 2024', filter:'ceremony', span:'wide',
+  { src:'media/img_13.jpg', title:'PATFORSWA — Change of Command Ceremony', cat:'CEREMONY · 2024', filter:'ceremony', span:'wide',
     cap:'Coast Guard Patrol Forces Southwest Asia hands over command.' },
-  { src:'/media/img_12.jpg', title:'Egypt Assumes Command — CMF CTF-154', cat:'CEREMONY · 2024', filter:'ceremony',
+  { src:'media/img_12.jpg', title:'Egypt Assumes Command — CMF CTF-154', cat:'CEREMONY · 2024', filter:'ceremony',
     cap:'Egypt takes command of Combined Task Force 154.' },
-  { src:'/media/img_03.jpg', title:'JEMX-25 — Briefings, Didactics & Tactical Lanes', cat:'JOINT OPS · 2025', filter:'joint',
+  { src:'media/img_03.jpg', title:'JEMX-25 — Briefings, Didactics & Tactical Lanes', cat:'JOINT OPS · 2025', filter:'joint',
     cap:'Comprehensive joint training spanning briefings to lane execution.' },
-  { src:'/media/img_04.jpg', title:'Joint Medical Teams — JEMX-25 Air Lift Operations', cat:'JOINT OPS · 2025', filter:'joint', span:'tall',
+  { src:'media/img_04.jpg', title:'Joint Medical Teams — JEMX-25 Air Lift Operations', cat:'JOINT OPS · 2025', filter:'joint', span:'tall',
     cap:'Processing and air lift operations as JEMX-25 begins.' },
-  { src:'/media/img_09.jpg', title:'USCGC Glen Harris — Trilateral Exercise w/ Iraq & Kuwait', cat:'MARITIME · 2024', filter:'maritime',
+  { src:'media/img_09.jpg', title:'USCGC Glen Harris — Trilateral Exercise w/ Iraq & Kuwait', cat:'MARITIME · 2024', filter:'maritime',
     cap:'Coalition maritime cooperation, U.S. 5th Fleet AOO.' },
-  { src:'/media/img_10.jpg', title:'USCGC Glen Harris — Trilateral Exercise', cat:'MARITIME · 2024', filter:'maritime',
+  { src:'media/img_10.jpg', title:'USCGC Glen Harris — Trilateral Exercise', cat:'MARITIME · 2024', filter:'maritime',
     cap:'Multilateral training builds interoperability.' },
-  { src:'/media/img_11.jpg', title:'USCGC Glen Harris — GunX', cat:'TRAINING · 2024', filter:'training',
+  { src:'media/img_11.jpg', title:'USCGC Glen Harris — GunX', cat:'TRAINING · 2024', filter:'training',
     cap:'Gunnery exercise aboard USCGC Glen Harris, July 15, 2024.' },
-  { src:'/media/img_14.jpg', title:'Compass Rose III — Day Four', cat:'JOINT OPS · 2024', filter:'joint', span:'wide',
+  { src:'media/img_14.jpg', title:'Compass Rose III — Day Four', cat:'JOINT OPS · 2024', filter:'joint', span:'wide',
     cap:'Compass Rose III multinational training, day four.' },
-  { src:'/media/img_15.jpg', title:'Compass Rose III — Day Three', cat:'JOINT OPS · 2024', filter:'joint',
+  { src:'media/img_15.jpg', title:'Compass Rose III — Day Three', cat:'JOINT OPS · 2024', filter:'joint',
     cap:'Compass Rose III, day three.' },
-  { src:'/media/img_16.jpg', title:'Compass Rose III — Day Two', cat:'JOINT OPS · 2024', filter:'joint',
+  { src:'media/img_16.jpg', title:'Compass Rose III — Day Two', cat:'JOINT OPS · 2024', filter:'joint',
     cap:'Compass Rose III, day two.' },
-  { src:'/media/img_17.jpg', title:'Rose Compass III — Day One', cat:'JOINT OPS · 2024', filter:'joint',
+  { src:'media/img_17.jpg', title:'Rose Compass III — Day One', cat:'JOINT OPS · 2024', filter:'joint',
     cap:'Compass Rose III, day one.' },
-  { src:'/media/img_01.jpg', title:'JEMX-25 Continues — Joint Combat Medical Care', cat:'TRAINING · 2025', filter:'training',
+  { src:'media/img_01.jpg', title:'JEMX-25 Continues — Joint Combat Medical Care', cat:'TRAINING · 2025', filter:'training',
     cap:'Joint forces master combat medical care during JEMX-25.' },
 ];
 
@@ -140,7 +140,7 @@ const WORK_ITEMS = [
 (function coursework(){
   const grid = document.getElementById('courseGrid');
   if (!grid) return;
-  fetch('/assignments.json').then(r => r.json()).then(items => {
+  fetch('assignments.json').then(r => r.json()).then(items => {
     items.forEach(a => {
       const el = document.createElement('article');
       el.className = 'course-card';
@@ -161,7 +161,7 @@ const WORK_ITEMS = [
         </div>
         <div class="cc-foot">
           <span class="cc-date">${a.date}</span>
-          <a class="cc-download" href="/files/${a.file}" download>Download <span aria-hidden="true">↓</span></a>
+          <a class="cc-download" href="files/${a.file}" download>Download <span aria-hidden="true">↓</span></a>
         </div>`;
       grid.appendChild(el);
       // Reveal on intersect
