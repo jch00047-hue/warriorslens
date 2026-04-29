@@ -1,0 +1,137 @@
+# Sveltia / Decap CMS configuration for Warrior's Lens
+# https://decapcms.org/docs/configuration-options/
+#
+# Authentication: GitHub Personal Access Token (PAT).
+# When you visit /admin you'll be prompted to paste a token.
+# How to make one:
+#   1) GitHub → Settings → Developer settings → Personal access tokens
+#      → Fine-grained tokens (recommended) or Tokens (classic)
+#   2) Repo access: Only select repositories → jch00047-hue/warriorslens
+#   3) Permissions (fine-grained):
+#        - Contents: Read and write
+#        - Metadata: Read
+#   4) Generate, copy the token (starts with `github_pat_…`),
+#      paste it in the CMS sign-in page. It's stored only in your
+#      browser's local storage.
+#
+# Every save is committed to `main` and triggers a GitHub Pages rebuild,
+# so the live site updates within ~1 minute.
+
+backend:
+  name: github
+  repo: jch00047-hue/warriorslens
+  branch: main
+  commit_messages:
+    create: "CMS: create {{collection}} `{{slug}}`"
+    update: "CMS: update {{collection}} `{{slug}}`"
+    delete: "CMS: delete {{collection}} `{{slug}}`"
+    uploadMedia: "CMS: upload `{{path}}`"
+    deleteMedia: "CMS: delete `{{path}}`"
+
+# Where uploaded images are stored in the repo, and how the site references them.
+media_folder: "public/uploads"
+public_folder: "/warriorslens/uploads"
+
+site_url: "https://jch00047-hue.github.io/warriorslens/"
+display_url: "https://jch00047-hue.github.io/warriorslens/"
+
+# Disable editorial workflow — Julio is the sole editor. Saves go straight to main.
+publish_mode: simple
+
+collections:
+  # ─────────────── Site identity (single file) ───────────────
+  - name: site
+    label: "Site identity"
+    delete: false
+    files:
+      - name: site
+        label: "Identity, contact, socials"
+        file: "public/content/site.yml"
+        fields:
+          - { name: brand,    label: "Brand",       widget: string }
+          - { name: owner,    label: "Owner name",  widget: string }
+          - { name: rank,     label: "Rank",        widget: string }
+          - { name: branch,   label: "Branch",      widget: string }
+          - { name: role,     label: "Role / title", widget: string }
+          - { name: tagline,  label: "Tagline",     widget: string }
+          - { name: location, label: "Location",    widget: string }
+          - { name: email,    label: "Email (personal)", widget: string }
+          - { name: emailMil, label: "Email (.mil)",     widget: string, required: false }
+          - { name: linkedin, label: "LinkedIn URL", widget: string }
+          - { name: dvids,    label: "DVIDS portfolio URL", widget: string }
+
+  # ─────────────── About section (single file) ───────────────
+  - name: about
+    label: "About section"
+    delete: false
+    files:
+      - name: about
+        label: "About copy"
+        file: "public/content/about.yml"
+        fields:
+          - { name: eyebrow, label: "Eyebrow (small label)", widget: string }
+          - { name: heading, label: "Section heading",       widget: string }
+          - name: body
+            label: "Paragraphs"
+            widget: list
+            field: { name: paragraph, label: "Paragraph", widget: text }
+          - name: highlights
+            label: "Highlights / chips"
+            widget: list
+            field: { name: highlight, label: "Highlight", widget: string }
+
+  # ─────────────── Hero stats (single file, list of 4) ─────────
+  - name: hero_stats
+    label: "Hero stats"
+    delete: false
+    files:
+      - name: hero_stats
+        label: "Stats shown under the hero"
+        file: "public/content/hero-stats.yml"
+        fields:
+          - name: stats
+            label: "Stats"
+            widget: list
+            min: 1
+            max: 6
+            fields:
+              - { name: value, label: "Value", widget: string, hint: "e.g. 13+, 483, Multi" }
+              - { name: label, label: "Label", widget: string }
+
+  # ─────────────── Experience (list of assignments) ─────────
+  - name: experience
+    label: "Experience timeline"
+    delete: false
+    files:
+      - name: experience
+        label: "Assignments"
+        file: "public/content/experience.yml"
+        fields:
+          - name: entries
+            label: "Entries (newest first)"
+            widget: list
+            fields:
+              - { name: year,     label: "Year(s)",  widget: string, hint: "e.g. 2024 — 2025" }
+              - { name: role,     label: "Role",     widget: string }
+              - { name: org,      label: "Org / unit", widget: string }
+              - { name: location, label: "Location", widget: string }
+              - { name: body,     label: "Description", widget: text }
+
+  # ─────────────── Press (list of articles) ─────────
+  - name: press
+    label: "Press & coverage"
+    delete: false
+    files:
+      - name: press
+        label: "Articles"
+        file: "public/content/press.yml"
+        fields:
+          - name: items
+            label: "Press items"
+            widget: list
+            fields:
+              - { name: title,       label: "Article title",  widget: string }
+              - { name: publication, label: "Publication",    widget: string }
+              - { name: date,        label: "Date",           widget: string, hint: "YYYY-MM or YYYY-MM-DD" }
+              - { name: summary,     label: "Summary",        widget: text }
+              - { name: url,         label: "Article URL",    widget: string }

@@ -1,0 +1,9 @@
+stats:
+  - value: 13+
+    label: Years In Service
+  - value: "2"
+    label: Deployments
+  - value: Multi
+    label: TDY Missions
+  - value: "483"
+    label: DVIDS Assets
