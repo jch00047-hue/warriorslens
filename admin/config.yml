@@ -1,21 +1,32 @@
-# Sveltia / Decap CMS configuration for Warrior's Lens
-# https://decapcms.org/docs/configuration-options/
+# ─────────────────────────────────────────────────────────────────
+#  Warrior's Lens — CMS configuration (Sveltia / Decap compatible)
+#  Live admin: https://jch00047-hue.github.io/warriorslens/admin/
 #
-# Authentication: GitHub Personal Access Token (PAT).
-# When you visit /admin you'll be prompted to paste a token.
-# How to make one:
-#   1) GitHub → Settings → Developer settings → Personal access tokens
-#      → Fine-grained tokens (recommended) or Tokens (classic)
-#   2) Repo access: Only select repositories → jch00047-hue/warriorslens
-#   3) Permissions (fine-grained):
-#        - Contents: Read and write
-#        - Metadata: Read
-#   4) Generate, copy the token (starts with `github_pat_…`),
-#      paste it in the CMS sign-in page. It's stored only in your
-#      browser's local storage.
+#  Authentication
+#  ──────────────
+#  Sign in with a GitHub Personal Access Token (PAT). To generate one:
+#    1) GitHub → Settings → Developer settings → Personal access tokens
+#       → Fine-grained tokens (recommended).
+#    2) Repo access: Only select repositories → jch00047-hue/warriorslens.
+#    3) Permissions (fine-grained):
+#         • Contents: Read and write
+#         • Metadata: Read
+#    4) Generate, copy the token (starts with `github_pat_…`),
+#       paste it on the CMS sign-in screen ("Sign In Using Access Token").
+#       The token lives only in your browser's local storage.
 #
-# Every save is committed to `main` and triggers a GitHub Pages rebuild,
-# so the live site updates within ~1 minute.
+#  Editing flow
+#  ────────────
+#  Saves commit YAML to `public/content/*.yml` on the `main` branch.
+#  GitHub Pages rebuilds within ~1 minute, then the site loads the new
+#  content from /content/*.yml at runtime.
+#
+#  Image uploads
+#  ─────────────
+#  Any "Image" field opens an upload widget. Pick a file from your computer
+#  and the CMS commits it to `public/uploads/` and writes the URL into the
+#  field. URL on the live site is `/warriorslens/uploads/<filename>`.
+# ─────────────────────────────────────────────────────────────────
 
 backend:
   name: github
@@ -34,55 +45,78 @@ public_folder: "/warriorslens/uploads"
 
 site_url: "https://jch00047-hue.github.io/warriorslens/"
 display_url: "https://jch00047-hue.github.io/warriorslens/"
+logo_url: "https://jch00047-hue.github.io/warriorslens/assets/wl-logo.svg"
 
-# Disable editorial workflow — Julio is the sole editor. Saves go straight to main.
+# Disable editorial workflow — Julio is sole editor. Saves go straight to main.
 publish_mode: simple
 
 collections:
-  # ─────────────── Site identity (single file) ───────────────
+  # ───────────────────────────── Site identity ─────────────────────────────
   - name: site
     label: "Site identity"
+    label_singular: "Site identity"
+    description: >-
+      Brand name, your name and rank, role/title, contact email, location,
+      and external links shown in the header, footer, and contact section.
     delete: false
     files:
       - name: site
         label: "Identity, contact, socials"
         file: "public/content/site.yml"
+        description: >-
+          The single source of truth for your name, rank, branch, role,
+          location, email, and social/external profile links.
         fields:
-          - { name: brand,    label: "Brand",       widget: string }
-          - { name: owner,    label: "Owner name",  widget: string }
-          - { name: rank,     label: "Rank",        widget: string }
-          - { name: branch,   label: "Branch",      widget: string }
-          - { name: role,     label: "Role / title", widget: string }
-          - { name: tagline,  label: "Tagline",     widget: string }
-          - { name: location, label: "Location",    widget: string }
-          - { name: email,    label: "Email (personal)", widget: string }
-          - { name: emailMil, label: "Email (.mil)",     widget: string, required: false }
-          - { name: linkedin, label: "LinkedIn URL", widget: string }
-          - { name: dvids,    label: "DVIDS portfolio URL", widget: string }
+          - { name: brand,    label: "Brand name",         widget: string, hint: "Shown in header lockup, footer, and tab title. Always with apostrophe: Warrior's Lens." }
+          - { name: owner,    label: "Owner full name",    widget: string, hint: "e.g. Julio C. Hernandez" }
+          - { name: rank,     label: "Rank",               widget: string, hint: "e.g. SSG" }
+          - { name: branch,   label: "Branch of service",  widget: string, hint: "e.g. U.S. Army" }
+          - { name: role,     label: "Role / title",       widget: string, hint: "Public-facing tagline role, e.g. \"Combat Photographer & Public Affairs Specialist\"." }
+          - { name: tagline,  label: "Site tagline",       widget: string, hint: "Short single-sentence positioning line shown beneath the role." }
+          - { name: location, label: "Duty location",      widget: string, hint: "e.g. \"Fort Meade, MD — 55th Public Affairs Company\"" }
+          - { name: email,    label: "Email — personal",   widget: string, hint: "Primary contact address used in the contact section." }
+          - { name: emailMil, label: "Email — .mil",       widget: string, required: false, hint: "Optional military address. Leave blank to hide." }
+          - { name: linkedin, label: "LinkedIn URL",       widget: string, hint: "Full URL, e.g. https://www.linkedin.com/in/julio-hernandez/" }
+          - { name: dvids,    label: "DVIDS portfolio URL", widget: string, hint: "Your DVIDS portfolio link." }
 
-  # ─────────────── About section (single file) ───────────────
+  # ───────────────────────────── About section ─────────────────────────────
   - name: about
     label: "About section"
+    label_singular: "About"
+    description: >-
+      Body copy that appears in the About section under the hero — the
+      eyebrow, heading, paragraphs, and the highlight chips.
     delete: false
     files:
       - name: about
         label: "About copy"
         file: "public/content/about.yml"
+        description: >-
+          The narrative paragraphs and highlight chips shown in the About
+          section. Add or remove paragraphs as your bio evolves.
         fields:
-          - { name: eyebrow, label: "Eyebrow (small label)", widget: string }
-          - { name: heading, label: "Section heading",       widget: string }
+          - { name: eyebrow, label: "Eyebrow (small label)", widget: string, hint: "Tiny uppercase label above the heading, e.g. \"Operator Profile\"." }
+          - { name: heading, label: "Section heading",       widget: string, hint: "Large display heading shown in the About section." }
           - name: body
             label: "Paragraphs"
             widget: list
+            summary: "{{fields.paragraph | truncate(60)}}"
+            hint: "Each item is one paragraph in the body of the About section."
             field: { name: paragraph, label: "Paragraph", widget: text }
           - name: highlights
-            label: "Highlights / chips"
+            label: "Highlight chips"
             widget: list
+            summary: "{{fields.highlight}}"
+            hint: "Short standout phrases (e.g. \"13+ years service\") rendered as bordered chips."
             field: { name: highlight, label: "Highlight", widget: string }
 
-  # ─────────────── Hero stats (single file, list of 4) ─────────
+  # ───────────────────────────── Hero stats ────────────────────────────────
   - name: hero_stats
     label: "Hero stats"
+    label_singular: "Hero stats"
+    description: >-
+      The numeric stats shown directly under the hero headline (e.g.
+      "13+ years service", "483 published photos"). Aim for 3 to 4 entries.
     delete: false
     files:
       - name: hero_stats
@@ -94,13 +128,18 @@ collections:
             widget: list
             min: 1
             max: 6
+            summary: "{{fields.value}} — {{fields.label}}"
             fields:
-              - { name: value, label: "Value", widget: string, hint: "e.g. 13+, 483, Multi" }
-              - { name: label, label: "Label", widget: string }
+              - { name: value, label: "Value", widget: string, hint: "Big number or short token, e.g. 13+, 483, Multi" }
+              - { name: label, label: "Label", widget: string, hint: "Caption beneath the value, e.g. \"Years of service\"." }
 
-  # ─────────────── Experience (list of assignments) ─────────
+  # ───────────────────────────── Experience ────────────────────────────────
   - name: experience
     label: "Experience timeline"
+    label_singular: "Assignment"
+    description: >-
+      The Experience section's career timeline. List newest assignment first.
+      Each entry becomes one row in the timeline.
     delete: false
     files:
       - name: experience
@@ -110,16 +149,21 @@ collections:
           - name: entries
             label: "Entries (newest first)"
             widget: list
+            summary: "{{fields.year}} · {{fields.role}} — {{fields.org}}"
             fields:
-              - { name: year,     label: "Year(s)",  widget: string, hint: "e.g. 2024 — 2025" }
-              - { name: role,     label: "Role",     widget: string }
-              - { name: org,      label: "Org / unit", widget: string }
-              - { name: location, label: "Location", widget: string }
-              - { name: body,     label: "Description", widget: text }
+              - { name: year,     label: "Year(s)",      widget: string, hint: "e.g. \"2024 — 2025\" or \"2018\"." }
+              - { name: role,     label: "Role / title", widget: string, hint: "Your duty title at this assignment, e.g. \"Lead Combat Camera, NAVCENT\"." }
+              - { name: org,      label: "Org / unit",   widget: string, hint: "Unit or organization, e.g. \"55th Public Affairs Company\"." }
+              - { name: location, label: "Location",     widget: string, hint: "Geographic location, e.g. \"Fort Meade, MD\" or \"Bahrain\"." }
+              - { name: body,     label: "Description",  widget: text,   hint: "1-3 sentences describing scope, missions, and impact." }
 
-  # ─────────────── Press (list of articles) ─────────
+  # ───────────────────────────── Press & coverage ──────────────────────────
   - name: press
     label: "Press & coverage"
+    label_singular: "Press article"
+    description: >-
+      External articles, mentions, or syndications that reference your work.
+      Newest first. Each entry becomes a card in the Press section.
     delete: false
     files:
       - name: press
@@ -129,9 +173,119 @@ collections:
           - name: items
             label: "Press items"
             widget: list
+            summary: "{{fields.publication}} — {{fields.title}}"
             fields:
-              - { name: title,       label: "Article title",  widget: string }
-              - { name: publication, label: "Publication",    widget: string }
-              - { name: date,        label: "Date",           widget: string, hint: "YYYY-MM or YYYY-MM-DD" }
-              - { name: summary,     label: "Summary",        widget: text }
-              - { name: url,         label: "Article URL",    widget: string }
+              - { name: title,       label: "Article title",  widget: string, hint: "Headline of the article." }
+              - { name: publication, label: "Publication",    widget: string, hint: "Outlet name, e.g. \"DVIDS\" or \"Stars and Stripes\"." }
+              - { name: date,        label: "Date",           widget: string, required: false, hint: "Format: YYYY-MM or YYYY-MM-DD. Leave blank if unknown." }
+              - { name: summary,     label: "Summary",        widget: text,   hint: "1-2 sentence description of the article." }
+              - { name: url,         label: "Article URL",    widget: string, hint: "Full link to the published article." }
+
+  # ───────────────────────────── Insights (IMC strategy) ───────────────────
+  - name: insights
+    label: "Insights — IMC strategy"
+    label_singular: "Insights"
+    description: >-
+      The graduate campaign work shown in the Insights section, plus the
+      "Warrior Communicator Advantage" positioning statement at the bottom.
+    delete: false
+    files:
+      - name: insights
+        label: "Strategy block"
+        file: "public/content/insights.yml"
+        description: >-
+          Section intro copy, the three campaign cards, and the closing
+          positioning statement. Reorder or replace campaigns as new
+          coursework is completed.
+        fields:
+          - { name: eyebrow, label: "Section eyebrow", widget: string, required: false, hint: "Small tag above the heading. Default: \"IMC Strategy & Campaigns\"." }
+          - { name: kicker,  label: "Kicker badge",    widget: string, hint: "Short bordered badge to the right of the heading, e.g. \"WVU — Integrated Marketing Communications\"." }
+          - { name: intro,   label: "Section intro",   widget: text,   hint: "1-3 sentence overview shown next to the heading." }
+
+          - name: campaigns
+            label: "Campaign cards"
+            widget: list
+            summary: "{{fields.code}} · {{fields.title}}"
+            min: 1
+            max: 6
+            hint: "Each item renders as one of the three side-by-side campaign cards."
+            fields:
+              - { name: code,      label: "Code",          widget: string, hint: "Short code shown on the card, e.g. \"01\", \"02\", \"03\"." }
+              - { name: course,    label: "Course",        widget: string, hint: "e.g. \"JRL 433 — Integrated Marketing Communications\"." }
+              - { name: title,     label: "Campaign title", widget: string }
+              - { name: objective, label: "Objective",     widget: text,   hint: "1-2 sentence description of what the campaign sets out to do." }
+              - name: pillars
+                label: "Strategic pillars"
+                widget: list
+                hint: "Short single-word pillars rendered as chips, e.g. \"Realism.\", \"Tension.\", \"Mastery.\". Aim for 3."
+                summary: "{{fields.pillar}}"
+                field: { name: pillar, label: "Pillar", widget: string }
+              - name: deliverables
+                label: "Key deliverables"
+                widget: list
+                hint: "Bulleted list of what the campaign produces (3-6 items)."
+                summary: "{{fields.deliverable | truncate(60)}}"
+                field: { name: deliverable, label: "Deliverable", widget: string }
+              - { name: outcome, label: "Strategic outcome", widget: text, hint: "Closing italic line on the card describing the takeaway." }
+
+          - name: advantage
+            label: "Warrior Communicator Advantage"
+            widget: object
+            hint: "The closing positioning statement under the campaign cards."
+            fields:
+              - { name: title, label: "Title",      widget: string, hint: "Display heading. The first two words render in white, the rest in italic gold." }
+              - { name: body,  label: "Body",       widget: text,   hint: "1-2 paragraph statement on what makes your background distinctive." }
+              - { name: cta,   label: "Call to action", widget: text, hint: "Closing line in gold, e.g. availability for freelance / consulting / full-time." }
+
+  # ───────────────────────────── Field Notes (blog) ────────────────────────
+  - name: blog
+    label: "Field Notes (Blog)"
+    label_singular: "Essay"
+    description: >-
+      Long-form essays shown in the Field Notes section. The first post is
+      featured at the top; the rest render as a grid of cards. Add a new
+      essay any time and it appears on the live site within ~1 minute.
+    delete: false
+    files:
+      - name: blog
+        label: "Posts"
+        file: "public/content/blog.yml"
+        description: >-
+          One entry per essay. Newest first — the top entry becomes the
+          featured hero. Each post supports a header image (uploaded via the
+          image picker), category, date, dek (subtitle), body paragraphs,
+          and optional academic-style references.
+        fields:
+          - name: posts
+            label: "Posts (newest first)"
+            widget: list
+            summary: "{{fields.date}} · {{fields.title}}"
+            min: 0
+            fields:
+              - { name: slug,     label: "Slug",         widget: string, hint: "URL-safe identifier used as the React key. Lowercase, hyphenated, e.g. \"beyond-the-frontlines\". Keep stable so links don't break." }
+              - { name: title,    label: "Title",        widget: string }
+              - { name: date,     label: "Date",         widget: string, hint: "Format: YYYY-MM-DD (e.g. 2025-09-15). Used to sort and display." }
+              - { name: category, label: "Category",     widget: string, hint: "Short label rendered as a tag, e.g. \"Field Essay\", \"Doctrine\", \"Craft Note\"." }
+              - { name: dek,      label: "Dek (subtitle)", widget: text,  hint: "1-2 sentence sub-headline shown under the title and on cards." }
+              - { name: image,    label: "Header image", widget: image, required: false, hint: "Upload a 3:2 (landscape) image. Used as the post's hero image and card thumbnail." }
+              - { name: caption,  label: "Image caption", widget: string, required: false, hint: "Photo cutline shown below the header image (place, person, date)." }
+              - name: paragraphs
+                label: "Body paragraphs"
+                widget: list
+                summary: "{{fields.paragraph | truncate(80)}}"
+                hint: "One item per paragraph. Plain text — no markdown needed."
+                field: { name: paragraph, label: "Paragraph", widget: text }
+              - name: references
+                label: "References (optional)"
+                widget: list
+                required: false
+                summary: "{{fields.text | truncate(60)}}"
+                hint: "Academic-style citations rendered at the end of the essay. Leave empty if not needed."
+                fields:
+                  - { name: text, label: "Citation text", widget: string, hint: "Full citation, e.g. \"Smith, J. (2024). Title. Outlet.\"" }
+                  - { name: url,  label: "URL",           widget: string, hint: "Link to the source." }
+
+  # ───────────────────────────── Media library ─────────────────────────────
+  # Sveltia auto-shows a Media tab; this entry adds a documentation hint.
+  # Uploaded files land in public/uploads/ and are served at
+  # https://jch00047-hue.github.io/warriorslens/uploads/<filename>.

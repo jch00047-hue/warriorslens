@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/warriorslens/static/css/main.f44cb85e.css",
-    "main.js": "/warriorslens/static/js/main.d0756499.js",
+    "main.css": "/warriorslens/static/css/main.8fad3635.css",
+    "main.js": "/warriorslens/static/js/main.ef8e92e2.js",
     "index.html": "/warriorslens/index.html"
   },
   "entrypoints": [
-    "static/css/main.f44cb85e.css",
-    "static/js/main.d0756499.js"
+    "static/css/main.8fad3635.css",
+    "static/js/main.ef8e92e2.js"
   ]
 }
