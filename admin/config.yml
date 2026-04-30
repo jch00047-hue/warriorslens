@@ -79,6 +79,7 @@ collections:
           - { name: linkedin, label: "LinkedIn URL",       widget: string, hint: "Full URL, e.g. https://www.linkedin.com/in/julio-hernandez/" }
           - { name: dvids,    label: "DVIDS portfolio URL", widget: string, hint: "Your DVIDS portfolio link." }
           - { name: formspreeEndpoint, label: "Formspree endpoint URL", widget: string, required: false, pattern: ['^(https://formspree\.io/f/[A-Za-z0-9]+)?$', 'Must be a Formspree URL like https://formspree.io/f/abcd1234, or leave blank.'], hint: "Optional. Sign up at formspree.io, create a form, and paste your endpoint here. Leaving blank falls back to mailto." }
+          - { name: subscribeEndpoint, label: "Blog subscribe endpoint URL", widget: string, required: false, pattern: ['^(https://formspree\.io/f/[A-Za-z0-9]+)?$', 'Must be a Formspree URL like https://formspree.io/f/abcd1234, or leave blank.'], hint: "Optional. Create a SECOND Formspree form for blog subscribers and paste its endpoint here. Leaving blank falls back to mailto so subscribers email you directly." }
 
   # ───────────────────────────── About section ─────────────────────────────
   - name: about

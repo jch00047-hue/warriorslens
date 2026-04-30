@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/warriorslens/static/css/main.a1c21c0d.css",
-    "main.js": "/warriorslens/static/js/main.1fa9d4b1.js",
+    "main.css": "/warriorslens/static/css/main.e427edc0.css",
+    "main.js": "/warriorslens/static/js/main.8620f741.js",
     "static/js/964.c12662fc.chunk.js": "/warriorslens/static/js/964.c12662fc.chunk.js",
     "static/js/164.ac36194b.chunk.js": "/warriorslens/static/js/164.ac36194b.chunk.js",
     "static/js/855.042d1370.chunk.js": "/warriorslens/static/js/855.042d1370.chunk.js",
@@ -9,7 +9,7 @@
     "index.html": "/warriorslens/index.html"
   },
   "entrypoints": [
-    "static/css/main.a1c21c0d.css",
-    "static/js/main.1fa9d4b1.js"
+    "static/css/main.e427edc0.css",
+    "static/js/main.8620f741.js"
   ]
 }
