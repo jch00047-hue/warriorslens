@@ -1,0 +1,140 @@
+eyebrow: Academic / WVU IMC
+title: Graduate Coursework
+subtitle: Strategy, branded content, and applied social media.
+body: >-
+  Selected graduate work from my M.S. in Integrated Marketing Communications at West Virginia University. The portfolio
+  spans social media strategy, branded content & narrative, applied social media, and AR/VR — with case studies grounded
+  in real organizations and IPs (55th Public Affairs Company, Randy’s Army Navy, Escape from Tarkov, Rainbow Six Siege,
+  Salesforce x MrBeast, IKEA Place).
+courses:
+  - code: JRL 432
+    title: Social Media Strategy
+    instructor: Jeri Knowlton
+  - code: JRL 433
+    title: Social Media Application & Journalism
+    instructor: Kelly Greathouse
+  - code: MDIA 438
+    title: Branded Content & Narrative
+    instructor: Michael DeLong
+  - code: MDIA 348
+    title: Branded Content (Foundational)
+    instructor: Michael DeLong
+filters:
+  - filter: All
+  - filter: Strategy
+  - filter: Branded Content
+  - filter: Social Media
+  - filter: AR / VR
+  - filter: Extra Credit
+items:
+  - id: jrl432-u12
+    tag: Strategy
+    course: JRL 432
+    unit: Unit 12
+    title: 55th Public Affairs Company — Social Strategy
+    summary: >-
+      Six-month integrated social plan for the 55th PAC during its rebrand from a Combat Camera signal unit to a
+      public-affairs mission set. SWOT, audience laddering, OPSEC review, and a content cadence built around real Combat
+      Camera assets.
+    file: files/JRL432_Unit12_55thPAC-SocialStrategy.docx
+    year: '2026'
+  - id: jrl432-u8
+    tag: Strategy
+    course: JRL 432
+    unit: Unit 8
+    title: Randy’s Army Navy — Social Audit
+    summary: >-
+      Audit and growth strategy for a veteran-owned military surplus shop near Fort Meade. Channel mix recommendations,
+      content pillars, and a 90-day calendar focused on the military / first-responder community.
+    file: files/JRL432_Unit8_RandysArmyNavy-SocialAudit.docx
+    year: '2026'
+  - id: jrl432-ec
+    tag: Extra Credit
+    course: JRL 432
+    unit: Extra Credit
+    title: AI Tools for Social Media Managers
+    summary: >-
+      Critical look at how generative AI — ChatGPT, image models, and analytics copilots — are reshaping the day-to-day
+      of social media practitioners, with guardrails for ethics and disclosure.
+    file: files/JRL432_ExtraCredit_AI-SocialMedia.docx
+    year: '2026'
+  - id: jrl433-u7
+    tag: Social Media
+    course: JRL 433
+    unit: Unit 7
+    title: Live Sports & Second-Screen Behavior
+    summary: >-
+      Analysis of mobile / second-screen engagement during live sports and recommendations for sports brands building
+      real-time social activations alongside the broadcast.
+    file: files/JRL433_Unit7_LiveSports-SecondScreen.docx
+    year: '2026'
+  - id: jrl433-u9
+    tag: Social Media
+    course: JRL 433
+    unit: Unit 9
+    title: User-Generated Content for Hardware Brands
+    summary: >-
+      How gaming peripheral and PC hardware companies (Razer, Logitech, NZXT) can systematize creator UGC and citizen
+      reporting into editorial pipelines without losing brand voice.
+    file: files/JRL433_Unit9_UGC-Hardware.docx
+    year: '2026'
+  - id: jrl433-u11
+    tag: Social Media
+    course: JRL 433
+    unit: Unit 11
+    title: Rainbow Six Siege — Esports Community
+    summary: >-
+      Case study of Ubisoft’s Rainbow Six Siege esports ecosystem: operator-based meta, community programs, and how
+      editorial / livestream content reinforces a deeply invested player base.
+    file: files/JRL433_Unit11_RainbowSix-Esports.docx
+    year: '2026'
+  - id: mdia438-u8
+    tag: Branded Content
+    course: MDIA 438
+    unit: Unit 8
+    title: Escape from Tarkov — Promotion Plan
+    summary: >-
+      Owned, earned, and paid promotion targeting hardcore FPS / extraction-shooter players ages 18–34 in NA & EU.
+      Channel-by-channel narrative around Tarkov’s high-stakes loop.
+    file: files/MDIA438_Unit8_EscapeFromTarkov-Promotion.docx
+    year: '2026'
+  - id: mdia438-u10
+    tag: Branded Content
+    course: MDIA 438
+    unit: Unit 10
+    title: Tarkov — Launch Trailer Breakdown
+    summary: >-
+      Shot-by-shot read of the Escape from Tarkov v1.0 storyline launch trailer as a marketing artifact — cinematic
+      conventions, audience targeting, and how it sets up post-launch CRM.
+    file: files/MDIA438_Unit10_Tarkov-LaunchTrailer.docx
+    year: '2026'
+  - id: mdia438-u12
+    tag: Branded Content
+    course: MDIA 438
+    unit: Unit 12
+    title: Tarkov — Six-Month Campaign Deck
+    summary: >-
+      Full presentation deck (PPTX) defining success metrics and measurement tools for a six-month owned, paid, and
+      earned media plan around Escape from Tarkov.
+    file: files/MDIA438_Unit12_Tarkov-CampaignDeck.pptx
+    year: '2026'
+  - id: mdia348-ec
+    tag: Extra Credit
+    course: MDIA 348
+    unit: Extra Credit
+    title: Salesforce x MrBeast — Super Bowl LX
+    summary: >-
+      Analysis of “The Vault” — Salesforce’s Super Bowl LX collaboration with MrBeast — as a model of branded content
+      that uses live broadcast as a launchpad for an owned media flywheel.
+    file: files/MDIA348_ExtraCredit_Salesforce-MrBeast.docx
+    year: '2026'
+  - id: u9-arvr
+    tag: AR / VR
+    course: JRL 433
+    unit: Unit 9 (AR/VR)
+    title: AR / VR in Brand Experience — IKEA Place
+    summary: >-
+      How AR (IKEA Place) and VR are reshaping retail and consumer marketing — trade-offs between novelty, utility, and
+      conversion lift.
+    file: files/Unit9_AR-VR-IKEA.docx
+    year: '2026'

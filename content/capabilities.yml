@@ -1,0 +1,41 @@
+items:
+  - code: '01'
+    title: Combat Camera
+    desc: >-
+      Documenting kinetic and contingency operations across austere environments — imagery that supports commander’s
+      intent and the historical record.
+    items:
+      - Operational documentation
+      - Aerial / rotary platforms
+      - Low-light & night ops
+      - Embedded coverage
+  - code: '02'
+    title: Public Affairs
+    desc: >-
+      Strategic visual storytelling aligned with theater-level themes and messages — from coalition coverage to media
+      engagements.
+    items:
+      - Theater messaging
+      - Press / engagement support
+      - Joint & multinational PA
+      - Crisis communications
+  - code: '03'
+    title: Multimedia & IMC
+    desc: >-
+      Integrated Marketing Communications applied to military storytelling — cohesive campaigns across photo, video, and
+      graphic deliverables.
+    items:
+      - Video production
+      - Motion graphics
+      - Print & digital design
+      - Campaign strategy
+  - code: '04'
+    title: Portraiture
+    desc: >-
+      Editorial-grade portraits of Soldiers, leaders, and units — capturing readiness, resilience, and the human
+      dimension of military service.
+    items:
+      - Command portraits
+      - Unit identity
+      - Editorial features
+      - Recruitment imagery

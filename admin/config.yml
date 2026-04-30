@@ -78,6 +78,7 @@ collections:
           - { name: emailMil, label: "Email — .mil",       widget: string, required: false, hint: "Optional military address. Leave blank to hide." }
           - { name: linkedin, label: "LinkedIn URL",       widget: string, hint: "Full URL, e.g. https://www.linkedin.com/in/julio-hernandez/" }
           - { name: dvids,    label: "DVIDS portfolio URL", widget: string, hint: "Your DVIDS portfolio link." }
+          - { name: formspreeEndpoint, label: "Formspree endpoint URL", widget: string, required: false, pattern: ['^(https://formspree\.io/f/[A-Za-z0-9]+)?$', 'Must be a Formspree URL like https://formspree.io/f/abcd1234, or leave blank.'], hint: "Optional. Sign up at formspree.io, create a form, and paste your endpoint here. Leaving blank falls back to mailto." }
 
   # ───────────────────────────── About section ─────────────────────────────
   - name: about
@@ -177,7 +178,7 @@ collections:
             fields:
               - { name: title,       label: "Article title",  widget: string, hint: "Headline of the article." }
               - { name: publication, label: "Publication",    widget: string, hint: "Outlet name, e.g. \"DVIDS\" or \"Stars and Stripes\"." }
-              - { name: date,        label: "Date",           widget: string, required: false, hint: "Format: YYYY-MM or YYYY-MM-DD. Leave blank if unknown." }
+              - { name: date,        label: "Date",           widget: string, required: false, pattern: ['^([0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?)?$', 'Use YYYY, YYYY-MM, or YYYY-MM-DD (or leave blank).'], hint: "Format: YYYY-MM or YYYY-MM-DD. Leave blank if unknown." }
               - { name: summary,     label: "Summary",        widget: text,   hint: "1-2 sentence description of the article." }
               - { name: url,         label: "Article URL",    widget: string, hint: "Full link to the published article." }
 
@@ -237,6 +238,160 @@ collections:
               - { name: body,  label: "Body",       widget: text,   hint: "1-2 paragraph statement on what makes your background distinctive." }
               - { name: cta,   label: "Call to action", widget: text, hint: "Closing line in gold, e.g. availability for freelance / consulting / full-time." }
 
+  # ───────────────────────────── Capabilities ──────────────────────────────
+  - name: capabilities
+    label: "Capabilities"
+    label_singular: "Capability"
+    description: >-
+      The four service offerings shown in the Capabilities section. Each card
+      displays a code, a service title, a 1-2 sentence description, and a
+      bulleted list of representative deliverables.
+    delete: false
+    files:
+      - name: capabilities
+        label: "Capability cards"
+        file: "public/content/capabilities.yml"
+        fields:
+          - name: items
+            label: "Cards"
+            widget: list
+            min: 1
+            max: 6
+            summary: "{{fields.code}} \u00b7 {{fields.title}}"
+            fields:
+              - { name: code,  label: "Code",  widget: string, hint: "Short ordinal, e.g. 01." }
+              - { name: title, label: "Title", widget: string }
+              - { name: desc,  label: "Description", widget: text, hint: "1-2 sentence summary of the offering." }
+              - name: items
+                label: "Bulleted deliverables"
+                widget: list
+                summary: "{{fields.deliverable}}"
+                hint: "3-5 short bullet items rendered under the card."
+                field: { name: deliverable, label: "Deliverable", widget: string }
+
+  # ───────────────────────────── Volunteer (Pershing Hill) ─────────────────
+  - name: volunteer
+    label: "Volunteer project"
+    label_singular: "Volunteer"
+    description: >-
+      The Pershing Hill Elementary volunteer feature \u2014 masthead copy,
+      project metadata, the hero image, and the gallery grid.
+    delete: false
+    files:
+      - name: volunteer
+        label: "Pershing Hill volunteer feature"
+        file: "public/content/volunteer.yml"
+        fields:
+          - { name: eyebrow,  label: "Eyebrow",  widget: string, hint: "Tiny uppercase label, e.g. \"Featured Project / Off-Duty\"." }
+          - { name: title,    label: "Title",    widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - name: meta
+            label: "Meta strip"
+            widget: list
+            hint: "Compact key/value pairs shown in the meta strip (PROJECT TYPE, DATE, LOCATION, ROLE)."
+            summary: "{{fields.k}}: {{fields.v}}"
+            fields:
+              - { name: k, label: "Label", widget: string }
+              - { name: v, label: "Value", widget: string }
+          - name: body
+            label: "Body paragraphs"
+            widget: list
+            summary: "{{fields.paragraph | truncate(60)}}"
+            hint: "One item per paragraph."
+            field: { name: paragraph, label: "Paragraph", widget: text }
+          - { name: hero, label: "Hero image", widget: image, hint: "Wide masthead photo for the section." }
+          - name: images
+            label: "Gallery images"
+            widget: list
+            summary: "{{fields.src}}"
+            hint: "Each item is one photo in the gallery grid. Upload a file or paste a URL."
+            field: { name: src, label: "Image", widget: image }
+
+  # ───────────────────────────── Coursework (graduate) ─────────────────────
+  - name: coursework
+    label: "Coursework (graduate)"
+    label_singular: "Course item"
+    description: >-
+      Selected graduate work from the WVU IMC program shown in the Coursework
+      section. Filterable list of deliverables linked to course PDFs/PPTX.
+    delete: false
+    files:
+      - name: coursework
+        label: "Graduate coursework"
+        file: "public/content/coursework.yml"
+        fields:
+          - { name: eyebrow,  label: "Section eyebrow", widget: string, required: false }
+          - { name: title,    label: "Section title",   widget: string }
+          - { name: subtitle, label: "Section subtitle", widget: string, required: false }
+          - { name: body,     label: "Section intro",   widget: text,   required: false }
+          - name: courses
+            label: "Courses (header strip)"
+            widget: list
+            summary: "{{fields.code}} \u00b7 {{fields.title}}"
+            hint: "Courses listed at the top of the section."
+            fields:
+              - { name: code,       label: "Course code", widget: string }
+              - { name: title,      label: "Course title", widget: string }
+              - { name: instructor, label: "Instructor",   widget: string, required: false }
+          - name: filters
+            label: "Filter chips"
+            widget: list
+            hint: "Filter chip labels shown above the items grid. \"All\" should be the first entry."
+            summary: "{{fields.filter}}"
+            field: { name: filter, label: "Filter", widget: string }
+          - name: items
+            label: "Items"
+            widget: list
+            summary: "{{fields.course}} \u00b7 {{fields.title}}"
+            fields:
+              - { name: id,      label: "ID",       widget: string, hint: "Stable React key, e.g. \"jrl432-u12\"." }
+              - { name: tag,     label: "Tag",      widget: string, hint: "Filter tag, e.g. \"Strategy\", \"Branded Content\", \"Social Media\", \"AR / VR\", \"Extra Credit\"." }
+              - { name: course,  label: "Course",   widget: string }
+              - { name: unit,    label: "Unit",     widget: string }
+              - { name: title,   label: "Title",    widget: string }
+              - { name: summary, label: "Summary",  widget: text }
+              - { name: file,    label: "File path", widget: string, hint: "Path under public/, e.g. \"files/JRL432_Unit12_55thPAC-SocialStrategy.docx\"." }
+              - { name: year,    label: "Year",     widget: string, required: false }
+
+  # ───────────────────────────── Per-post blog folder ──────────────────────
+  # Newer per-post collection. Files written here are loaded alongside
+  # public/content/blog.yml so legacy entries keep working.
+  - name: posts
+    label: "Field Notes (per-post)"
+    label_singular: "Essay (per-post)"
+    description: >-
+      Newer essays as one YAML file per post under public/content/posts/.
+      Use this collection going forward; the old single-file blog stays
+      readable for the existing two posts.
+    folder: "public/content/posts"
+    create: true
+    delete: true
+    extension: yml
+    format: yml
+    slug: "{{slug}}"
+    summary: "{{date}} \u00b7 {{title}}"
+    fields:
+      - { name: slug,     label: "Slug",         widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'] }
+      - { name: title,    label: "Title",        widget: string }
+      - { name: date,     label: "Date",         widget: string, pattern: ['^[0-9]{4}-[0-9]{2}-[0-9]{2}$', 'Date must be YYYY-MM-DD.'] }
+      - { name: category, label: "Category",     widget: string }
+      - { name: dek,      label: "Dek (subtitle)", widget: text }
+      - { name: image,    label: "Header image", widget: image, required: false }
+      - { name: caption,  label: "Image caption", widget: string, required: false }
+      - name: paragraphs
+        label: "Body paragraphs"
+        widget: list
+        summary: "{{fields.paragraph | truncate(80)}}"
+        field: { name: paragraph, label: "Paragraph", widget: text }
+      - name: references
+        label: "References (optional)"
+        widget: list
+        required: false
+        summary: "{{fields.text | truncate(60)}}"
+        fields:
+          - { name: text, label: "Citation", widget: string }
+          - { name: url,  label: "URL",      widget: string }
+
   # ───────────────────────────── Field Notes (blog) ────────────────────────
   - name: blog
     label: "Field Notes (Blog)"
@@ -262,9 +417,9 @@ collections:
             summary: "{{fields.date}} · {{fields.title}}"
             min: 0
             fields:
-              - { name: slug,     label: "Slug",         widget: string, hint: "URL-safe identifier used as the React key. Lowercase, hyphenated, e.g. \"beyond-the-frontlines\". Keep stable so links don't break." }
+              - { name: slug,     label: "Slug",         widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'], hint: "URL-safe identifier used as the React key. Lowercase, hyphenated, e.g. \"beyond-the-frontlines\". Keep stable so links don't break." }
               - { name: title,    label: "Title",        widget: string }
-              - { name: date,     label: "Date",         widget: string, hint: "Format: YYYY-MM-DD (e.g. 2025-09-15). Used to sort and display." }
+              - { name: date,     label: "Date",         widget: string, pattern: ['^[0-9]{4}-[0-9]{2}-[0-9]{2}$', 'Date must be YYYY-MM-DD (e.g. 2025-09-15).'], hint: "Format: YYYY-MM-DD (e.g. 2025-09-15). Used to sort and display." }
               - { name: category, label: "Category",     widget: string, hint: "Short label rendered as a tag, e.g. \"Field Essay\", \"Doctrine\", \"Craft Note\"." }
               - { name: dek,      label: "Dek (subtitle)", widget: text,  hint: "1-2 sentence sub-headline shown under the title and on cards." }
               - { name: image,    label: "Header image", widget: image, required: false, hint: "Upload a 3:2 (landscape) image. Used as the post's hero image and card thumbnail." }
