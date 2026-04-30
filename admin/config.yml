@@ -188,8 +188,9 @@ collections:
     label: "Insights — IMC strategy"
     label_singular: "Insights"
     description: >-
-      The graduate campaign work shown in the Insights section, plus the
+      The applied IMC campaign work shown in the Insights section, plus the
       "Warrior Communicator Advantage" positioning statement at the bottom.
+      Course work is from WVU's accelerated B.S.+M.S. (4+1) IMC program.
     delete: false
     files:
       - name: insights
@@ -308,17 +309,18 @@ collections:
             hint: "Each item is one photo in the gallery grid. Upload a file or paste a URL."
             field: { name: src, label: "Image", widget: image }
 
-  # ───────────────────────────── Coursework (graduate) ─────────────────────
+  # ───────────────────────────── Coursework (BS+MS accelerated) ────────────────
   - name: coursework
-    label: "Coursework (graduate)"
+    label: "Coursework (BS+MS accelerated)"
     label_singular: "Course item"
     description: >-
-      Selected graduate work from the WVU IMC program shown in the Coursework
-      section. Filterable list of deliverables linked to course PDFs/PPTX.
+      Selected work from WVU's accelerated B.S.+M.S. (4+1) IMC program shown in
+      the Coursework section — currently completing the undergraduate phase.
+      Filterable list of deliverables linked to course PDFs/PPTX.
     delete: false
     files:
       - name: coursework
-        label: "Graduate coursework"
+        label: "BS+MS coursework"
         file: "public/content/coursework.yml"
         fields:
           - { name: eyebrow,  label: "Section eyebrow", widget: string, required: false }
