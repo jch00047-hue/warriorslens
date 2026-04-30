@@ -1,71 +1,38 @@
 posts:
-  - slug: beyond-the-frontlines
-    title: "Beyond the Frontlines: A Photographer’s Mission to Capture Military Life"
-    date: "2025-09-15"
-    category: Field Essay
-    dek: >-
-      What military photography actually does for the public record — told from
-      seven years on patrol and three deployments behind the lens.
-    image: >-
-      https://static.wixstatic.com/media/9f2b42_a6b827b7fe604a89829034b809f7df59~mv2.jpg/v1/fit/w_1480,h_986,q_90,enc_avif,quality_auto/blog.jpg
-    caption: >-
-      Figure 1. Staff Sergeant Timmy Fair — U.S. Army, Operation Inherent
-      Resolve, Al Asad Air Base, Iraq, 2022.
+  - slug: trading-steel-for-carbon-mirrorless-transition
+    title: 'Trading Steel for Carbon: Jumping From the 5D Mark III to Mirrorless'
+    date: 2026-04-29
+    category: Gear Review
+    dek: A combat camera / PA specialist talks through retiring a Canon 5D Mark III, flirting with a GH5 II, and eyeing a modern full-frame workhorse.
+    image: /warriorslens/uploads/5d-mark-iv-after-a-really-muddy-cave-trip-and-after-v0-u5tp2qa5tafa1.jpg
+    caption: ''
     paragraphs:
-      - >-
-        My journey into military photography didn’t start with a camera in hand
-        — it began after seven years as a military police officer. I was all
-        over the place: Louisiana, South Korea, Fort Bliss. I loved the
-        structured life, but I always felt a pull to be more creative. So in
-        2021 I reclassified as a multimedia illustrator.
-      - >-
-        After training, my new job merged with combat documentation specialists.
-        I had a handle on photography from school, but most of what I learned
-        came from hands-on training. During that time I took a photo that showed
-        me the real purpose of the work. I needed a test shot, and Staff
-        Sergeant Timmy Fair from the Michigan National Guard let me take it. In
-        that moment I realized he was more than a uniform — he had a story.
-      - >-
-        My camera was naturally drawn to him because I was always by his side,
-        in a vehicle or out on foot patrol. The moment that stands out most was
-        a night on the outskirts of Al Asad Airbase. Tensions were rising
-        because Iraqi service members thought our vehicles had knocked out the
-        power to their post. In the pitch black, with just a few red and green
-        lights on our soldiers, I had to lean on my low-light skills. SSG Fair
-        held out a hand — a calm, deliberate gesture that stopped the commotion.
-        He had a translator explain we hadn’t cut their power, then handed over
-        a case of energy drinks as a show of good faith. We eventually traced
-        the issue to corroded wires. His presence — calm, stern, deliberate —
-        still resonates with me.
-      - >-
-        A single photo can do a lot. It helps civilians understand what military
-        life actually looks like. Our work bridges the gap between service
-        members and the public, putting a face to the people who serve. The role
-        has a long history — from bulky Crimean and Civil War cameras shaping
-        early public perception of conflict to today’s Public Affairs imagery
-        providing a truthful, accurate, and timely account of operations.
-      - >-
-        The perks outweigh the challenges. After seven years as an MP my closest
-        brush with deployment was a 2018 border surge. Within a few years as a
-        combat documentation specialist I deployed to Iraq and Syria, then to
-        Bahrain. The downsides — dated equipment, edit constraints — are minor
-        next to the mission and the travel.
-      - >-
-        Want to see more of the stories military photographers tell? Visit DVIDS
-        or connect with me on LinkedIn.
+      - |-
+        For years, my workhorse was a Canon 5D Mark III with a rotating cast of lenses and a few weird vintage primes that somehow kept ending up in my bag. It covered volunteer work, unit events, and a lot of life in between without complaining.
+
+        But mirrorless is no longer a fad. It is the new baseline for hybrid shooters, and even a stubborn camera nerd and combat camera / PA specialist has to adapt. This post kicks off a series on Warriors Lens about what it really looks like to move from an old DSLR legend into the modern mirrorless world.
+
+        The 5D Mark III still earns its respect. It delivers clean files, that classic full-frame look, and a rugged body that takes field conditions in stride. Paired with a 58 mm vintage Japanese prime—soft wide open, wild character, and beautiful bokeh—it turned routine coverage into a chance to be more intentional and artistic.
+
+        Where it struggles is exactly where today’s missions are headed: hybrid work. The autofocus and codecs feel dated for modern video, and the workflow lags behind what newer mirrorless bodies offer for fast PA turnaround and DVIDS-ready content. That is what pushed me to experiment with a very different path: Micro Four Thirds and the Panasonic GH5 II.
+
+        On paper, the GH5 II is almost the opposite of the 5D Mark III. The sensor is smaller, depth of field is not as shallow, but the stabilization, video tools, and all-day carry weight are built for real-world hybrid shooters. In the field, it gives me lighter gear, better handheld footage, and more modern video features without feeling fragile.
+
+        At the same time, full-frame still calls my name. Cameras like the Canon R6 II, Nikon Z6 III, and Panasonic S5 II keep popping up as capable, weather-sealed hybrids with strong low-light performance and fast autofocus. They look like true successors to what the 5D Mark III did for stills, while finally taking video seriously.
+
+        Right now, I am in the middle of that decision space. Do I fully embrace Micro Four Thirds for practicality and stabilization, or trade my 5D Mark III kit through Adorama and jump into a modern full-frame mirrorless system with one solid 24–105-style zoom? This series will document that process honestly—what I gain, what I lose, and what actually matters in the field.
+
+        If you are another camera nerd, a military shooter, or someone stuck between your old DSLR and the mirrorless world, I want these posts to feel like a realistic, boots-on-the-ground review. No sponsored unboxings, just real gear decisions from someone who has to live with the consequences on mission and at home.
     references:
-      - text: >-
-          Di Trolio, R. (2025). A Visual Instrument for Military Public Affairs.
-          Digital Commons@Lindenwood University.
-        url: >-
-          https://digitalcommons.lindenwood.edu/cgi/viewcontent.cgi?article=2379&context=theses
-      - text: >-
-          History is Now Magazine. (2023, October 20). War Photography Through
-          the Ages.
-        url: >-
-          http://www.historyisnowmagazine.com/blog/2023/10/20/war-photography-through-the-ages
-      - text: >-
-          U.S. Naval Institute. (1944). Combat Photography. Proceedings, 70(10),
-          500.
-        url: >-
-          https://www.usni.org/magazines/proceedings/1944/october/combat-photography
+      - text: Adorama – Sell Your Used Gear
+        url: https://www.adorama.com/sell-your-used-gear
+      - text: Adorama – Trade Used Cameras, Lenses, Video Equipment & Get Cash
+        url: https://www.adorama.com/g/sell-your-used-gear-abs
+      - text: Adorama – Buying & Selling Used (program overview)
+        url: https://www.adorama.com/help/usedMarketplace
+      - text: Amateur Photographer – The Best Full Frame Mirrorless Cameras in 2026
+        url: https://amateurphotographer.com/buying-advice/best-full-frame-mirrorless-cameras/
+      - text: Wirecutter – The 7 Best Mirrorless Cameras of 2026
+        url: https://www.nytimes.com/wirecutter/reviews/best-mirrorless-camera/
+      - text: Photography Life – The Best Mirrorless Cameras of 2026, Ranked
+        url: https://photographylife.com/best-mirrorless-camera
