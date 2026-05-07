@@ -13,9 +13,9 @@ meta:
 body:
   - >-
     As a dedicated parent volunteer, I support Pershing Hill Elementary by documenting major school ceremonies and
-    events. This was a special initiative to bring fresh, vibrant visuals to the school’s interior — working directly
+    events. This was a special initiative to bring fresh, vibrant visuals to the school's interior — working directly
     with the principal over two days to photograph and edit images that replaced outdated posters and rebeautified the
-    school’s halls.
+    school's halls.
   - >-
     All children featured were photographed with the explicit consent of their parents. The goal was to capture genuine
     smiles and cement those happy memories into the very halls they walk every day.
@@ -156,3 +156,52 @@ images:
       /warriorslens/assets/wix-archive/wix-af4edf02d4c64b95a63a95ed5743a2fb.jpg
   - src: >-
       /warriorslens/assets/wix-archive/wix-466cca52283749759aef07007936b0bd.jpg
+
+---
+eyebrow: Featured Project / Off-Duty
+title: Game Day — LA Chargers Season Opener 2021
+subtitle: Personal Photography • SoFi Stadium
+meta:
+  - k: PROJECT TYPE
+    v: Personal Photography / Sports Documentary
+  - k: DATE
+    v: September 2021
+  - k: LOCATION
+    v: SoFi Stadium, Inglewood, CA
+  - k: ROLE
+    v: Photographer
+body:
+  - >-
+    September 2021 — SoFi Stadium, Inglewood. My favorite team opens the season against Washington. As a photographer 
+    first and fan second, I documented the atmosphere, the plays, and the moment that would define both teams' year: 
+    Ryan Fitzpatrick's hip injury in the second quarter.
+  - >-
+    These frames capture the energy of NFL game day through a combat camera lens turned toward the sport I love. From 
+    the pre-game electric anticipation through the injury that would reshape the season, every shot tells the story of 
+    that singular Sunday in the shadow of the new stadium.
+hero: /uploads/chargers-2021/hero.jpg
+images:
+  - src: /uploads/chargers-2021/001.jpg
+  - src: /uploads/chargers-2021/002.jpg
+  - src: /uploads/chargers-2021/003.jpg
+  - src: /uploads/chargers-2021/004.jpg
+  - src: /uploads/chargers-2021/005.jpg
+  - src: /uploads/chargers-2021/006.jpg
+  - src: /uploads/chargers-2021/007.jpg
+  - src: /uploads/chargers-2021/008.jpg
+  - src: /uploads/chargers-2021/009.jpg
+  - src: /uploads/chargers-2021/010.jpg
+  - src: /uploads/chargers-2021/011.jpg
+  - src: /uploads/chargers-2021/012.jpg
+  - src: /uploads/chargers-2021/013.jpg
+  - src: /uploads/chargers-2021/014.jpg
+  - src: /uploads/chargers-2021/015.jpg
+  - src: /uploads/chargers-2021/016.jpg
+  - src: /uploads/chargers-2021/017.jpg
+  - src: /uploads/chargers-2021/018.jpg
+  - src: /uploads/chargers-2021/019.jpg
+  - src: /uploads/chargers-2021/020.jpg
+  - src: /uploads/chargers-2021/021.jpg
+  - src: /uploads/chargers-2021/022.jpg
+  - src: /uploads/chargers-2021/023.jpg
+  - src: /uploads/chargers-2021/024.jpg
