@@ -8,10 +8,12 @@ import About from "./components/About";
 import PortfolioGallery from "./components/PortfolioGallery";
 import Capabilities from "./components/Capabilities";
 import Volunteer from "./components/Volunteer";
+import Chargers from './components/Chargers';
 import Experience from "./components/Experience";
 import Marquee from "./components/Marquee";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+
 
 const Home = () => {
   useEffect(() => {
