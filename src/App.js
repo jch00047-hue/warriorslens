@@ -8,13 +8,11 @@ import About from "./components/About";
 import PortfolioGallery from "./components/PortfolioGallery";
 import Capabilities from "./components/Capabilities";
 import Volunteer from "./components/Volunteer";
-import ChargerTeamStrength from './components/ChargerTeamStrength';
+import Chargers from './components/Chargers';
 import Experience from "./components/Experience";
 import Marquee from "./components/Marquee";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
-
 
 const Home = () => {
   useEffect(() => {
@@ -34,7 +32,6 @@ const Home = () => {
     return () => io.disconnect();
   }, []);
 
-
   return (
     <div className="App grain bg-[#0a0a0a] text-[#e9e3d6] selection:bg-[#c9a961]">
       <Header />
@@ -45,7 +42,7 @@ const Home = () => {
         <PortfolioGallery />
         <Capabilities />
         <Volunteer />
-        <ChargerTeamStrength />
+        <Chargers />
         <Experience />
         <Contact />
       </main>
@@ -54,7 +51,6 @@ const Home = () => {
     </div>
   );
 };
-
 
 function App() {
   return (
@@ -65,6 +61,5 @@ function App() {
     </BrowserRouter>
   );
 }
-
 
 export default App;
