@@ -43,6 +43,7 @@ const Home = () => {
         <PortfolioGallery />
         <Capabilities />
         <Volunteer />
+        <Chargers />
         <Experience />
         <Contact />
       </main>
