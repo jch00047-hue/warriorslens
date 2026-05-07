@@ -406,7 +406,7 @@ export const VOLUNTEER = {
 };
 
 // Featured personal project — LA Chargers 2021 Season Opener
-const CHARGERS_BASE = process.env.PUBLIC_URL + "/uploads/chargers-2021";
+const CHARGERS_BASE = process.env.PUBLIC_URL + "/uploads";
 
 export const CHARGERS = {
   eyebrow: "Featured Project / Off-Duty",
