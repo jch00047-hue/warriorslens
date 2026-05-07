@@ -8,11 +8,12 @@ import About from "./components/About";
 import PortfolioGallery from "./components/PortfolioGallery";
 import Capabilities from "./components/Capabilities";
 import Volunteer from "./components/Volunteer";
-import Chargers from './components/Chargers';
+import ChargerTeamStrength from './components/ChargerTeamStrength';
 import Experience from "./components/Experience";
 import Marquee from "./components/Marquee";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+
 
 
 const Home = () => {
@@ -33,6 +34,7 @@ const Home = () => {
     return () => io.disconnect();
   }, []);
 
+
   return (
     <div className="App grain bg-[#0a0a0a] text-[#e9e3d6] selection:bg-[#c9a961]">
       <Header />
@@ -43,7 +45,7 @@ const Home = () => {
         <PortfolioGallery />
         <Capabilities />
         <Volunteer />
-        <Chargers />
+        <ChargerTeamStrength />
         <Experience />
         <Contact />
       </main>
@@ -52,6 +54,7 @@ const Home = () => {
     </div>
   );
 };
+
 
 function App() {
   return (
@@ -62,5 +65,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;
