@@ -83,10 +83,15 @@ const Chargers = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 auto-rows-[1fr]">
           {CHARGERS.images.map((src, i) => {
             const span =
-              i === 0 ? "col-span-2 row-span-2" :
-              i === 5 ? "col-span-2" :
-              i === 9 ? "row-span-2" :
-              i === 12 ? "col-span-2" : "";
+              i === 0
+                ? "col-span-2 row-span-2"
+                : i === 5
+                ? "col-span-2"
+                : i === 9
+                ? "row-span-2"
+                : i === 12
+                ? "col-span-2"
+                : "";
             return (
               <button
                 key={i}
@@ -151,6 +156,7 @@ const Chargers = () => {
           >
             <X className="w-8 h-8" />
           </button>
+
           <button
             className="absolute left-4 text-white/70 hover:text-white transition-colors z-10"
             onClick={(e) => {
@@ -161,6 +167,7 @@ const Chargers = () => {
           >
             <ChevronLeft className="w-12 h-12" />
           </button>
+
           <button
             className="absolute right-4 text-white/70 hover:text-white transition-colors z-10"
             onClick={(e) => {
@@ -171,10 +178,24 @@ const Chargers = () => {
           >
             <ChevronRight className="w-12 h-12" />
           </button>
+
           <img
             src={open === 0 ? CHARGERS.hero : CHARGERS.images[open - 1]}
             alt={`Frame ${open + 1}`}
             className="max-w-full max-h-full object-contain"
             onClick={(e) => e.stopPropagation()}
           />
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center 
+
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center text-xs uppercase tracking-wider text-white/70">
+            <span>
+              {String(open + 1).padStart(2, "0")} / {String(total).padStart(2, "0")} •{" "}
+              {open === 0 ? "Project cover" : `Frame ${open + 1}`}
+            </span>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Chargers;
