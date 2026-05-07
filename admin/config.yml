@@ -26,7 +26,7 @@
 #  Any "Image" field opens an upload widget. Pick a file from your computer
 #  and the CMS commits it to `public/uploads/` and writes the URL into the
 #  field. URL on the live site is `/warriorslens/uploads/<filename>`.
-# ─────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────
 
 backend:
   name: github
@@ -78,8 +78,8 @@ collections:
           - { name: emailMil, label: "Email — .mil",       widget: string, required: false, hint: "Optional military address. Leave blank to hide." }
           - { name: linkedin, label: "LinkedIn URL",       widget: string, hint: "Full URL, e.g. https://www.linkedin.com/in/julio-hernandez/" }
           - { name: dvids,    label: "DVIDS portfolio URL", widget: string, hint: "Your DVIDS portfolio link." }
-          - { name: formspreeEndpoint, label: "Formspree endpoint URL", widget: string, required: false, pattern: ['^(https://formspree\.io/f/[A-Za-z0-9]+)?$', 'Must be a Formspree URL like https://formspree.io/f/abcd1234, or leave blank.'], hint: "Optional. Sign up at formspree.io, create a form, and paste your endpoint here. Leaving blank falls back to mailto." }
-          - { name: subscribeEndpoint, label: "Blog subscribe endpoint URL", widget: string, required: false, pattern: ['^(https://formspree\.io/f/[A-Za-z0-9]+)?$', 'Must be a Formspree URL like https://formspree.io/f/abcd1234, or leave blank.'], hint: "Optional. Create a SECOND Formspree form for blog subscribers and paste its endpoint here. Leaving blank falls back to mailto so subscribers email you directly." }
+          - { name: formspreeEndpoint, label: "Formspree endpoint URL", widget: string, required: false, pattern: ['^(https://formspree\.io/f/[A-Za-z0-9]+)?$', 'Must be a Formspree URL like https://formspree.io/f/...'] }
+          - { name: subscribeEndpoint, label: "Blog subscribe endpoint URL", widget: string, required: false, pattern: ['^(https://formspree\.io/f/[A-Za-z0-9]+)?$', 'Must be a Formspree URL like https://formspree.io/f/...'] }
 
   # ───────────────────────────── About section ─────────────────────────────
   - name: about
@@ -112,7 +112,7 @@ collections:
             hint: "Short standout phrases (e.g. \"13+ years service\") rendered as bordered chips."
             field: { name: highlight, label: "Highlight", widget: string }
 
-  # ───────────────────────────── Hero stats ────────────────────────────────
+  # ───────────────────────────── Hero stats ──────────────────────────────
   - name: hero_stats
     label: "Hero stats"
     label_singular: "Hero stats"
@@ -135,7 +135,7 @@ collections:
               - { name: value, label: "Value", widget: string, hint: "Big number or short token, e.g. 13+, 483, Multi" }
               - { name: label, label: "Label", widget: string, hint: "Caption beneath the value, e.g. \"Years of service\"." }
 
-  # ───────────────────────────── Experience ────────────────────────────────
+  # ───────────────────────────── Experience ──────────────────────────────
   - name: experience
     label: "Experience timeline"
     label_singular: "Assignment"
@@ -179,7 +179,7 @@ collections:
             fields:
               - { name: title,       label: "Article title",  widget: string, hint: "Headline of the article." }
               - { name: publication, label: "Publication",    widget: string, hint: "Outlet name, e.g. \"DVIDS\" or \"Stars and Stripes\"." }
-              - { name: date,        label: "Date",           widget: string, required: false, pattern: ['^([0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?)?$', 'Use YYYY, YYYY-MM, or YYYY-MM-DD (or leave blank).'], hint: "Format: YYYY-MM or YYYY-MM-DD. Leave blank if unknown." }
+              - { name: date,        label: "Date",           widget: string, required: false, pattern: ['^([0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?)?$', 'Use YYYY, YYYY-MM, or YYYY-MM-DD (or leave blank)'] }
               - { name: summary,     label: "Summary",        widget: text,   hint: "1-2 sentence description of the article." }
               - { name: url,         label: "Article URL",    widget: string, hint: "Full link to the published article." }
 
@@ -259,7 +259,7 @@ collections:
             widget: list
             min: 1
             max: 6
-            summary: "{{fields.code}} \u00b7 {{fields.title}}"
+            summary: "{{fields.code}} · {{fields.title}}"
             fields:
               - { name: code,  label: "Code",  widget: string, hint: "Short ordinal, e.g. 01." }
               - { name: title, label: "Title", widget: string }
@@ -276,13 +276,51 @@ collections:
     label: "Volunteer project"
     label_singular: "Volunteer"
     description: >-
-      The Pershing Hill Elementary volunteer feature \u2014 masthead copy,
+      The Pershing Hill Elementary volunteer feature — masthead copy,
       project metadata, the hero image, and the gallery grid.
     delete: false
     files:
       - name: volunteer
         label: "Pershing Hill volunteer feature"
         file: "public/content/volunteer.yml"
+        fields:
+          - { name: eyebrow,  label: "Eyebrow",  widget: string, hint: "Tiny uppercase label, e.g. \"Featured Project / Off-Duty\"." }
+          - { name: title,    label: "Title",    widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - name: meta
+            label: "Meta strip"
+            widget: list
+            hint: "Compact key/value pairs shown in the meta strip (PROJECT TYPE, DATE, LOCATION, ROLE)."
+            summary: "{{fields.k}}: {{fields.v}}"
+            fields:
+              - { name: k, label: "Label", widget: string }
+              - { name: v, label: "Value", widget: string }
+          - name: body
+            label: "Body paragraphs"
+            widget: list
+            summary: "{{fields.paragraph | truncate(60)}}"
+            hint: "One item per paragraph."
+            field: { name: paragraph, label: "Paragraph", widget: text }
+          - { name: hero, label: "Hero image", widget: image, hint: "Wide masthead photo for the section." }
+          - name: images
+            label: "Gallery images"
+            widget: list
+            summary: "{{fields.src}}"
+            hint: "Each item is one photo in the gallery grid. Upload a file or paste a URL."
+            field: { name: src, label: "Image", widget: image }
+
+  # ───────────────────────────── Featured Project (Chargers) ────────────────
+  - name: chargers
+    label: "Featured Project — Chargers"
+    label_singular: "Chargers"
+    description: >-
+      The LA Chargers Season Opener 2021 featured project — masthead copy,
+      project metadata, the hero image, and the gallery grid.
+    delete: false
+    files:
+      - name: chargers
+        label: "LA Chargers Season Opener 2021"
+        file: "public/content/chargers.yml"
         fields:
           - { name: eyebrow,  label: "Eyebrow",  widget: string, hint: "Tiny uppercase label, e.g. \"Featured Project / Off-Duty\"." }
           - { name: title,    label: "Title",    widget: string }
@@ -330,7 +368,7 @@ collections:
           - name: courses
             label: "Courses (header strip)"
             widget: list
-            summary: "{{fields.code}} \u00b7 {{fields.title}}"
+            summary: "{{fields.code}} · {{fields.title}}"
             hint: "Courses listed at the top of the section."
             fields:
               - { name: code,       label: "Course code", widget: string }
@@ -345,7 +383,7 @@ collections:
           - name: items
             label: "Items"
             widget: list
-            summary: "{{fields.course}} \u00b7 {{fields.title}}"
+            summary: "{{fields.course}} · {{fields.title}}"
             fields:
               - { name: id,      label: "ID",       widget: string, hint: "Stable React key, e.g. \"jrl432-u12\"." }
               - { name: tag,     label: "Tag",      widget: string, hint: "Filter tag, e.g. \"Strategy\", \"Branded Content\", \"Social Media\", \"AR / VR\", \"Extra Credit\"." }
@@ -372,7 +410,7 @@ collections:
     extension: yml
     format: yml
     slug: "{{slug}}"
-    summary: "{{date}} \u00b7 {{title}}"
+    summary: "{{date}} · {{title}}"
     fields:
       - { name: slug,     label: "Slug",         widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'] }
       - { name: title,    label: "Title",        widget: string }
@@ -420,9 +458,9 @@ collections:
             summary: "{{fields.date}} · {{fields.title}}"
             min: 0
             fields:
-              - { name: slug,     label: "Slug",         widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'], hint: "URL-safe identifier used as the React key. Lowercase, hyphenated, e.g. \"beyond-the-frontlines\". Keep stable so links don't break." }
+              - { name: slug,     label: "Slug",         widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'], hint: "URL-safe identifier." }
               - { name: title,    label: "Title",        widget: string }
-              - { name: date,     label: "Date",         widget: string, pattern: ['^[0-9]{4}-[0-9]{2}-[0-9]{2}$', 'Date must be YYYY-MM-DD (e.g. 2025-09-15).'], hint: "Format: YYYY-MM-DD (e.g. 2025-09-15). Used to sort and display." }
+              - { name: date,     label: "Date",         widget: string, pattern: ['^[0-9]{4}-[0-9]{2}-[0-9]{2}$', 'Date must be YYYY-MM-DD (e.g. 2025-09-15).'], hint: "Format: YYYY-MM-DD (e.g. 2025-09-15)." }
               - { name: category, label: "Category",     widget: string, hint: "Short label rendered as a tag, e.g. \"Field Essay\", \"Doctrine\", \"Craft Note\"." }
               - { name: dek,      label: "Dek (subtitle)", widget: text,  hint: "1-2 sentence sub-headline shown under the title and on cards." }
               - { name: image,    label: "Header image", widget: image, required: false, hint: "Upload a 3:2 (landscape) image. Used as the post's hero image and card thumbnail." }
