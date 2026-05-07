@@ -391,7 +391,7 @@ export const CHARGERS = {
     { k: "ROLE", v: "Photographer" }
   ],
   body: [
-    "September 2021 — FedExField, Landover, Maryland. My favorite team opens the season against Washington. As a photographer first and fan second, I documented the atmosphere, the plays, and the moment that would define both teams' year: Ryan Fitzpatrick's hip injury in the second quarter.",
+    "its September 2021 — FedExField, Landover, Maryland. My favorite team opens the season against Washington. As a photographer first and fan second, I documented the atmosphere, the plays, and the moment that would define both teams' year: Ryan Fitzpatrick's hip injury in the second quarter.",
     "These frames capture the energy of NFL game day through a combat camera lens turned toward the sport I love. From the pre-game electric anticipation through the injury that would reshape the season, every shot tells the story of that singular Sunday at FedExField."
   ],
   stats: [
