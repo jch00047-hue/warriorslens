@@ -22,6 +22,7 @@ export const NAV = [
   { id: "about", label: "About" },
   { id: "capabilities", label: "Capabilities" },
   { id: "volunteer", label: "Volunteer" },
+  { id: "chargers", label: "Chargers 2021" },
   { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" }
 ];
@@ -377,6 +378,49 @@ export const VOLUNTEER = {
   ],
   hero: wix("9f2b42_466cca52283749759aef07007936b0bd~mv2.jpg")
 };
+// Featured personal project — LA Chargers 2021 Season Opener
+export const CHARGERS = {
+  eyebrow: "Featured Project / Off-Duty",
+  title: "Game Day — LA Chargers Season Opener 2021",
+  subtitle: "Personal Photography • FedExField",
+  heading: "Combat camera meets <em>passion.</em>",
+  meta: [
+    { k: "PROJECT TYPE", v: "Personal Photography / Sports Documentary" },
+    { k: "DATE", v: "September 2021" },
+    { k: "LOCATION", v: "FedExField, Landover, MD" },
+    { k: "ROLE", v: "Photographer" }
+  ],
+  body: [
+    "September 2021 — FedExField, Landover, Maryland. My favorite team opens the season against Washington. As a photographer first and fan second, I documented the atmosphere, the plays, and the moment that would define both teams' year: Ryan Fitzpatrick's hip injury in the second quarter.",
+    "These frames capture the energy of NFL game day through a combat camera lens turned toward the sport I love. From the pre-game electric anticipation through the injury that would reshape the season, every shot tells the story of that singular Sunday at FedExField."
+  ],
+  stats: [
+    { value: "17", label: "Frames Captured" },
+    { value: "1", label: "Historic Game" },
+    { value: "Q2", label: "Injury Moment" },
+    { value: "100%", label: "Pure Passion" }
+  ],
+  images: [
+    "/warriorslens/uploads/chargers-2021/DSC_0414.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0415.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0430.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0443.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0486.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0498.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0613.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0697.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0712.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0729.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0746.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0756.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0769.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0805.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0848.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0964.jpg",
+    "/warriorslens/uploads/chargers-2021/DSC_0998.jpg"
+  ],
+  hero: "/warriorslens/uploads/chargers-2021/DSC_0414.jpg"
+};//
 
 export const CLIENT_LOGOS = [
   "U.S. ARMY",
