@@ -377,7 +377,7 @@ export const VOLUNTEER = {
 };
 
 const chargers = (file) =>
-  `${process.env.PUBLIC_URL}/uploads/chargers-2021/${file}`;
+  `${process.env.PUBLIC_URL}/chargers-2021/${file}`;
 
 export const CHARGERS = {
   eyebrow: "Featured Project / Off-Duty",
