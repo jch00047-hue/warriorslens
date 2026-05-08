@@ -13,9 +13,6 @@ import Experience from "./components/Experience";
 import Marquee from "./components/Marquee";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Coursework from "./components/Coursework";
-import Campaigns from "./components/Campaigns";
-import Press from "./components/Press";
 
 const Home = () => {
   useEffect(() => {
