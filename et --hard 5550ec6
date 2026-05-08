@@ -1,0 +1,29 @@
+[33m5550ec6[m app update
+[1mdiff --git a/src/App.js b/src/App.js[m
+[1mindex 4c5fc3b..c490d20 100644[m
+[1m--- a/src/App.js[m
+[1m+++ b/src/App.js[m
+[36m@@ -7,8 +7,11 @@[m [mimport Hero from "./components/Hero";[m
+ import About from "./components/About";[m
+ import PortfolioGallery from "./components/PortfolioGallery";[m
+ import Capabilities from "./components/Capabilities";[m
+[32m+[m[32mimport Coursework from "./components/Coursework";[m
+[32m+[m[32mimport Campaigns from "./components/Campaigns";[m
+ import Volunteer from "./components/Volunteer";[m
+ import Chargers from "./components/Chargers";[m
+[32m+[m[32mimport Press from "./components/Press";[m
+ import Experience from "./components/Experience";[m
+ import Marquee from "./components/Marquee";[m
+ import Contact from "./components/Contact";[m
+[36m@@ -41,8 +44,11 @@[m [mconst Home = () => {[m
+         <About />[m
+         <PortfolioGallery />[m
+         <Capabilities />[m
+[32m+[m[32m        <Coursework />[m
+[32m+[m[32m        <Campaigns />[m
+         <Volunteer />[m
+         <Chargers />[m
+[32m+[m[32m        <Press />[m
+         <Experience />[m
+         <Contact />[m
+       </main>[m
