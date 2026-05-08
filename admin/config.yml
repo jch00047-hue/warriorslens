@@ -1,28 +1,7 @@
-# ─────────────────────────────────────────────────────────────────
-#  Warrior's Lens — CMS configuration (Sveltia / Decap compatible)
-#  Live admin: https://jch00047-hue.github.io/warriorslens/admin/
-#
-#  Purpose of this config
-#  ──────────────────────
-#  - Keep one-off site settings as single files
-#  - Make repeatable sections add/edit/delete friendly
-#  - Support archive-style blog behavior with featured + older links
-#
-#  Authentication
-#  ──────────────
-#  Sign in with a GitHub Personal Access Token (PAT).
-# ─────────────────────────────────────────────────────────────────────
-
 backend:
   name: github
   repo: jch00047-hue/warriorslens
   branch: main
-  commit_messages:
-    create: "CMS: create {{collection}} `{{slug}}`"
-    update: "CMS: update {{collection}} `{{slug}}`"
-    delete: "CMS: delete {{collection}} `{{slug}}`"
-    uploadMedia: "CMS: upload `{{path}}`"
-    deleteMedia: "CMS: delete `{{path}}`"
 
 media_folder: "public/uploads"
 public_folder: "/warriorslens/uploads"
@@ -34,7 +13,6 @@ logo_url: "https://jch00047-hue.github.io/warriorslens/assets/wl-logo.svg"
 publish_mode: simple
 
 collections:
-  # ───────────────────────────── Global / single-file ─────────────────────────────
   - name: site
     label: "Site identity"
     delete: false
@@ -87,159 +65,128 @@ collections:
           - name: stats
             label: "Stats"
             widget: list
-            min: 1
-            max: 6
             fields:
               - { name: value, label: "Value", widget: string }
               - { name: label, label: "Label", widget: string }
 
-  - name: homepage_sections
-    label: "Homepage section labels"
+  - name: volunteer
+    label: "Volunteer project"
     delete: false
     files:
-      - name: homepage_sections
-        label: "Homepage labels and intros"
-        file: "public/content/homepage-sections.yml"
+      - name: volunteer
+        label: "Creating Smiles / volunteer"
+        file: "public/content/volunteer.yml"
         fields:
-          - { name: offDutyTitle, label: "Off-duty section title", widget: string, required: false }
-          - { name: offDutyIntro, label: "Off-duty section intro", widget: text, required: false }
-          - { name: blogTitle, label: "Blog section title", widget: string, required: false }
-          - { name: blogIntro, label: "Blog section intro", widget: text, required: false }
-          - { name: pressTitle, label: "Press section title", widget: string, required: false }
-          - { name: pressIntro, label: "Press section intro", widget: text, required: false }
+          - { name: eyebrow, label: "Eyebrow", widget: string }
+          - { name: title, label: "Title", widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - name: meta
+            label: "Meta strip"
+            widget: list
+            fields:
+              - { name: k, label: "Label", widget: string }
+              - { name: v, label: "Value", widget: string }
+          - name: body
+            label: "Body paragraphs"
+            widget: list
+            field: { name: paragraph, label: "Paragraph", widget: text }
+          - { name: hero, label: "Hero image", widget: image }
+          - name: images
+            label: "Gallery images"
+            widget: list
+            field: { name: src, label: "Image path", widget: string }
 
-  # ───────────────────────────── Repeatable / entry collections ────────────────────
-  - name: off_duty_projects
-    label: "Off-duty projects"
-    label_singular: "Off-duty project"
-    folder: "public/content/off-duty"
-    create: true
-    delete: true
-    extension: yml
-    format: yml
-    slug: "{{slug}}"
-    summary: "{{title}} — {{subtitle}}"
-    fields:
-      - { name: slug, label: "Slug", widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'] }
-      - { name: order, label: "Sort order", widget: number, value_type: int, required: false, hint: "Lower numbers appear first." }
-      - { name: featured, label: "Featured on homepage", widget: boolean, default: true, required: false }
-      - { name: eyebrow, label: "Eyebrow", widget: string }
-      - { name: title, label: "Title", widget: string }
-      - { name: subtitle, label: "Subtitle", widget: string }
-      - name: meta
-        label: "Meta strip"
-        widget: list
+  - name: chargers
+    label: "Chargers project"
+    delete: false
+    files:
+      - name: chargers
+        label: "Chargers 2021"
+        file: "public/content/chargers.yml"
         fields:
-          - { name: k, label: "Label", widget: string }
-          - { name: v, label: "Value", widget: string }
-      - name: body
-        label: "Body paragraphs"
-        widget: list
-        field: { name: paragraph, label: "Paragraph", widget: text }
-      - { name: hero, label: "Hero image", widget: image }
-      - name: images
-        label: "Gallery images"
-        widget: list
-        field: { name: image, label: "Image", widget: image }
+          - { name: eyebrow, label: "Eyebrow", widget: string }
+          - { name: title, label: "Title", widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - name: meta
+            label: "Meta strip"
+            widget: list
+            fields:
+              - { name: k, label: "Label", widget: string }
+              - { name: v, label: "Value", widget: string }
+          - name: body
+            label: "Body paragraphs"
+            widget: list
+            field: { name: paragraph, label: "Paragraph", widget: text }
+          - { name: hero, label: "Hero image", widget: image }
+          - name: images
+            label: "Gallery images"
+            widget: list
+            field: { name: src, label: "Image path", widget: string }
 
-  - name: experience_entries
+  - name: experience
     label: "Experience timeline"
-    label_singular: "Assignment"
-    folder: "public/content/experience"
-    create: true
-    delete: true
-    extension: yml
-    format: yml
-    slug: "{{slug}}"
-    summary: "{{year}} · {{role}}"
-    fields:
-      - { name: slug, label: "Slug", widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'] }
-      - { name: order, label: "Sort order", widget: number, value_type: int, required: false, hint: "Lower numbers appear first. Use this instead of manually reordering giant lists." }
-      - { name: year, label: "Year(s)", widget: string }
-      - { name: role, label: "Role / title", widget: string }
-      - { name: org, label: "Org / unit", widget: string }
-      - { name: location, label: "Location", widget: string }
-      - { name: body, label: "Description", widget: text }
-
-  - name: press_items
-    label: "Press & coverage"
-    label_singular: "Press item"
-    folder: "public/content/press"
-    create: true
-    delete: true
-    extension: yml
-    format: yml
-    slug: "{{slug}}"
-    summary: "{{publication}} — {{title}}"
-    fields:
-      - { name: slug, label: "Slug", widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'] }
-      - { name: order, label: "Sort order", widget: number, value_type: int, required: false }
-      - { name: title, label: "Article title", widget: string }
-      - { name: publication, label: "Publication", widget: string }
-      - { name: date, label: "Date", widget: string, required: false, pattern: ['^([0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?)?$', 'Use YYYY, YYYY-MM, or YYYY-MM-DD (or leave blank)'] }
-      - { name: summary, label: "Summary", widget: text }
-      - { name: url, label: "Article URL", widget: string }
-      - { name: pinned, label: "Pin near top", widget: boolean, default: false, required: false }
-
-  - name: capabilities_items
-    label: "Capabilities"
-    label_singular: "Capability"
-    folder: "public/content/capabilities"
-    create: true
-    delete: true
-    extension: yml
-    format: yml
-    slug: "{{slug}}"
-    summary: "{{code}} · {{title}}"
-    fields:
-      - { name: slug, label: "Slug", widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'] }
-      - { name: order, label: "Sort order", widget: number, value_type: int, required: false }
-      - { name: code, label: "Code", widget: string }
-      - { name: title, label: "Title", widget: string }
-      - { name: desc, label: "Description", widget: text }
-      - name: items
-        label: "Bulleted deliverables"
-        widget: list
-        field: { name: deliverable, label: "Deliverable", widget: string }
-
-  - name: insights_campaigns
-    label: "Insights campaigns"
-    label_singular: "Campaign"
-    folder: "public/content/insights-campaigns"
-    create: true
-    delete: true
-    extension: yml
-    format: yml
-    slug: "{{slug}}"
-    summary: "{{code}} · {{title}}"
-    fields:
-      - { name: slug, label: "Slug", widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'] }
-      - { name: order, label: "Sort order", widget: number, value_type: int, required: false }
-      - { name: code, label: "Code", widget: string }
-      - { name: course, label: "Course", widget: string }
-      - { name: title, label: "Campaign title", widget: string }
-      - { name: objective, label: "Objective", widget: text }
-      - name: pillars
-        label: "Strategic pillars"
-        widget: list
-        field: { name: pillar, label: "Pillar", widget: string }
-      - name: deliverables
-        label: "Key deliverables"
-        widget: list
-        field: { name: deliverable, label: "Deliverable", widget: string }
-      - { name: outcome, label: "Strategic outcome", widget: text }
-
-  - name: insights_settings
-    label: "Insights settings"
     delete: false
     files:
-      - name: insights_settings
-        label: "Insights section intro + closing statement"
-        file: "public/content/insights-settings.yml"
+      - name: experience
+        label: "Assignments"
+        file: "public/content/experience.yml"
+        fields:
+          - name: entries
+            label: "Entries"
+            widget: list
+            fields:
+              - { name: year, label: "Year(s)", widget: string }
+              - { name: role, label: "Role / title", widget: string }
+              - { name: org, label: "Org / unit", widget: string }
+              - { name: location, label: "Location", widget: string }
+              - { name: body, label: "Description", widget: text }
+
+  - name: press
+    label: "Press & coverage"
+    delete: false
+    files:
+      - name: press
+        label: "Articles"
+        file: "public/content/press.yml"
+        fields:
+          - name: items
+            label: "Press items"
+            widget: list
+            fields:
+              - { name: title, label: "Article title", widget: string }
+              - { name: publication, label: "Publication", widget: string }
+              - { name: date, label: "Date", widget: string, required: false }
+              - { name: summary, label: "Summary", widget: text }
+              - { name: url, label: "Article URL", widget: string }
+
+  - name: insights
+    label: "Insights"
+    delete: false
+    files:
+      - name: insights
+        label: "Insights content"
+        file: "public/content/insights.yml"
         fields:
           - { name: eyebrow, label: "Section eyebrow", widget: string, required: false }
           - { name: kicker, label: "Kicker badge", widget: string }
           - { name: intro, label: "Section intro", widget: text }
+          - name: campaigns
+            label: "Campaign cards"
+            widget: list
+            fields:
+              - { name: code, label: "Code", widget: string }
+              - { name: course, label: "Course", widget: string }
+              - { name: title, label: "Campaign title", widget: string }
+              - { name: objective, label: "Objective", widget: text }
+              - name: pillars
+                label: "Strategic pillars"
+                widget: list
+                field: { name: pillar, label: "Pillar", widget: string }
+              - name: deliverables
+                label: "Key deliverables"
+                widget: list
+                field: { name: deliverable, label: "Deliverable", widget: string }
+              - { name: outcome, label: "Strategic outcome", widget: text }
           - name: advantage
             label: "Warrior Communicator Advantage"
             widget: object
@@ -248,103 +195,30 @@ collections:
               - { name: body, label: "Body", widget: text }
               - { name: cta, label: "Call to action", widget: text }
 
-  - name: coursework_items
-    label: "Coursework items"
-    label_singular: "Coursework item"
-    folder: "public/content/coursework-items"
-    create: true
-    delete: true
-    extension: yml
-    format: yml
-    slug: "{{slug}}"
-    summary: "{{course}} · {{title}}"
-    fields:
-      - { name: slug, label: "Slug", widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'] }
-      - { name: order, label: "Sort order", widget: number, value_type: int, required: false }
-      - { name: visible, label: "Visible on site", widget: boolean, default: true, required: false }
-      - { name: id, label: "ID", widget: string }
-      - { name: tag, label: "Tag", widget: string }
-      - { name: course, label: "Course", widget: string }
-      - { name: unit, label: "Unit", widget: string }
-      - { name: title, label: "Title", widget: string }
-      - { name: summary, label: "Summary", widget: text }
-      - { name: file, label: "File path", widget: string }
-      - { name: year, label: "Year", widget: string, required: false }
-
-  - name: coursework_settings
-    label: "Coursework settings"
+  - name: capabilities
+    label: "Capabilities"
     delete: false
     files:
-      - name: coursework_settings
-        label: "Coursework section settings"
-        file: "public/content/coursework-settings.yml"
+      - name: capabilities
+        label: "Capability cards"
+        file: "public/content/capabilities.yml"
         fields:
-          - { name: eyebrow, label: "Section eyebrow", widget: string, required: false }
-          - { name: title, label: "Section title", widget: string }
-          - { name: subtitle, label: "Section subtitle", widget: string, required: false }
-          - { name: body, label: "Section intro", widget: text, required: false }
-          - name: courses
-            label: "Courses (header strip)"
+          - name: items
+            label: "Cards"
             widget: list
             fields:
-              - { name: code, label: "Course code", widget: string }
-              - { name: title, label: "Course title", widget: string }
-              - { name: instructor, label: "Instructor", widget: string, required: false }
-          - name: filters
-            label: "Filter chips"
-            widget: list
-            field: { name: filter, label: "Filter", widget: string }
+              - { name: code, label: "Code", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: desc, label: "Description", widget: text }
+              - name: items
+                label: "Bulleted deliverables"
+                widget: list
+                field: { name: deliverable, label: "Deliverable", widget: string }
 
-  # ───────────────────────────── Blog / archive behavior ───────────────────────────
-  - name: posts
-    label: "Field Notes posts"
-    label_singular: "Post"
-    folder: "public/content/posts"
-    create: true
-    delete: true
-    extension: yml
-    format: yml
-    slug: "{{slug}}"
-    summary: "{{date}} · {{title}}"
-    fields:
-      - { name: slug, label: "Slug", widget: string, pattern: ['^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$', 'Lowercase letters, numbers, and hyphens only.'] }
-      - { name: title, label: "Title", widget: string }
-      - { name: date, label: "Date", widget: string, pattern: ['^[0-9]{4}-[0-9]{2}-[0-9]{2}$', 'Date must be YYYY-MM-DD.'] }
-      - { name: category, label: "Category", widget: string }
-      - { name: dek, label: "Dek (subtitle)", widget: text }
-      - { name: image, label: "Header image", widget: image, required: false }
-      - { name: caption, label: "Image caption", widget: string, required: false }
-      - { name: featured, label: "Featured post", widget: boolean, default: false, required: false, hint: "Set true for the one main post you want highlighted." }
-      - { name: show_on_homepage, label: "Show on homepage list", widget: boolean, default: true, required: false, hint: "Keep checked to show as a small older-post link/card on the homepage." }
-      - { name: archived, label: "Archived", widget: boolean, default: false, required: false, hint: "Archived posts stay in the CMS and site data, but can be hidden from main homepage display." }
-      - { name: pinned, label: "Pin near top", widget: boolean, default: false, required: false }
-      - name: paragraphs
-        label: "Body paragraphs"
-        widget: list
-        field: { name: paragraph, label: "Paragraph", widget: text }
-      - name: references
-        label: "References (optional)"
-        widget: list
-        required: false
-        fields:
-          - { name: text, label: "Citation text", widget: string }
-          - { name: url, label: "URL", widget: string }
-
-  - name: blog_settings
-    label: "Blog settings"
+  - name: coursework
+    label: "Coursework"
     delete: false
     files:
-      - name: blog_settings
-        label: "Blog homepage behavior"
-        file: "public/content/blog-settings.yml"
-        fields:
-          - { name: title, label: "Section title", widget: string, required: false }
-          - { name: intro, label: "Section intro", widget: text, required: false }
-          - { name: homepage_featured_count, label: "Homepage featured count", widget: number, value_type: int, required: false, hint: "Usually 1." }
-          - { name: homepage_link_count, label: "Homepage older-link count", widget: number, value_type: int, required: false, hint: "How many older posts to show as smaller links." }
-          - { name: show_archive_link, label: "Show archive link", widget: boolean, default: true, required: false }
-          - { name: archive_link_text, label: "Archive link text", widget: string, required: false }
-
-# ───────────────────────────── Media library ─────────────────────────────
-# Uploaded files land in public/uploads/ and are served at:
-# https://jch00047-hue.github.io/warriorslens/uploads/<filename>
+      - name: coursework
+        label: "BS+MS coursework"
+        file: "public/content/coursework.
