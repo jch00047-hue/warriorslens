@@ -1,25 +1,15 @@
 // src/data/mock.js
 
-// Pershing / Creating Smiles local assets (JPG masters)
-import ph1072 from "../../assets/pershing/F64A1072.jpg";
-import ph1079 from "../../assets/pershing/F64A1079.jpg";
-import ph1080 from "../../assets/pershing/F64A1080.jpg";
-import ph1101 from "../../assets/pershing/F64A1101.jpg";
-import ph1104 from "../../assets/pershing/F64A1104.jpg";
-import ph1113 from "../../assets/pershing/F64A1113.jpg";
-import ph1117 from "../../assets/pershing/F64A1117.jpg";
-import ph1133 from "../../assets/pershing/F64A1133.jpg";
-import ph1189 from "../../assets/pershing/F64A1189.jpg";
-import ph1190 from "../../assets/pershing/F64A1190.jpg";
-import ph1207 from "../../assets/pershing/F64A1207.jpg";
-import ph1214 from "../../assets/pershing/F64A1214.jpg";
-import ph1220 from "../../assets/pershing/F64A1220.jpg";
-import ph1225 from "../../assets/pershing/F64A1225.jpg";
-import ph1226 from "../../assets/pershing/F64A1226.jpg";
-import ph1230 from "../../assets/pershing/F64A1230.jpg";
-
 // Warriors Lens portfolio data
 // Imagery sourced from the existing Wix portfolio + DVIDS public portfolio (storyteller ID 1685082)
+
+// Public folder helpers
+const pershing = (file) =>
+  `${process.env.PUBLIC_URL}/pershing/${file}`;
+
+const chargers = (file) =>
+  `${process.env.PUBLIC_URL}/chargers-2021/${file}`;
+
 
 export const SITE = {
   brand: "Warriors Lens",
@@ -37,6 +27,7 @@ export const SITE = {
   }
 };
 
+
 export const NAV = [
   { id: "work", label: "Work" },
   { id: "about", label: "About" },
@@ -47,6 +38,7 @@ export const NAV = [
   { id: "contact", label: "Contact" }
 ];
 
+
 export const HERO_STATS = [
   { value: "13+", label: "Years In Service" },
   { value: "2", label: "Deployments" },
@@ -54,11 +46,14 @@ export const HERO_STATS = [
   { value: "456", label: "DVIDS Assets" }
 ];
 
+
 export const HERO_IMAGE =
   "https://static.wixstatic.com/media/9f2b42_4f77d2e9c6ac4c5c9bffb37e106d3ab3~mv2.jpg/v1/fill/w_1905,h_900,fp_0.50_0.50,q_90,enc_avif,quality_auto/hero.jpg";
 
+
 export const PORTRAIT_IMAGE =
   "https://static.wixstatic.com/media/9f2b42_026831cb883e4b079dfb509cf68bfd81~mv2.jpg/v1/fill/w_900,h_1200,al_c,q_90,enc_avif,quality_auto/portrait.jpg";
+
 
 export const ABOUT = {
   eyebrow: "About",
@@ -77,10 +72,13 @@ export const ABOUT = {
   ]
 };
 
+
 export const CATEGORIES = ["All", "Combat Camera", "Joint Ops", "Maritime", "Training", "Portrait"];
+
 
 const D = (yymm, id) =>
   `https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/${yymm}/${id}/600x375_q95.jpg`;
+
 
 export const PROJECTS = [
   {
@@ -265,6 +263,7 @@ export const PROJECTS = [
   }
 ];
 
+
 export const CAPABILITIES = [
   {
     code: "01",
@@ -291,6 +290,7 @@ export const CAPABILITIES = [
     items: ["Command portraits", "Unit identity", "Editorial features", "Recruitment imagery"]
   }
 ];
+
 
 export const EXPERIENCE = [
   {
@@ -351,8 +351,10 @@ export const EXPERIENCE = [
   }
 ];
 
+
 const wix = (slug) =>
   `https://static.wixstatic.com/media/${slug}/v1/fit/w_1440,h_960,q_90,enc_avif,quality_auto/img.jpg`;
+
 
 export const VOLUNTEER = {
   eyebrow: "Featured Project / Off-Duty",
@@ -376,22 +378,22 @@ export const VOLUNTEER = {
     { value: "0", label: "Cost To School" }
   ],
   images: [
-    ph1072,
-    ph1079,
-    ph1080,
-    ph1101,
-    ph1104,
-    ph1113,
-    ph1117,
-    ph1133,
-    ph1189,
-    ph1190,
-    ph1207,
-    ph1214,
-    ph1220,
-    ph1225,
-    ph1226,
-    ph1230,
+    pershing("F64A1072.jpg"),
+    pershing("F64A1079.jpg"),
+    pershing("F64A1080.jpg"),
+    pershing("F64A1101.jpg"),
+    pershing("F64A1104.jpg"),
+    pershing("F64A1113.jpg"),
+    pershing("F64A1117.jpg"),
+    pershing("F64A1133.jpg"),
+    pershing("F64A1189.jpg"),
+    pershing("F64A1190.jpg"),
+    pershing("F64A1207.jpg"),
+    pershing("F64A1214.jpg"),
+    pershing("F64A1220.jpg"),
+    pershing("F64A1225.jpg"),
+    pershing("F64A1226.jpg"),
+    pershing("F64A1230.jpg"),
 
     wix("9f2b42_b241861028274ac193775a9481a9f544~mv2.jpg"),
     wix("9f2b42_9dd5671d4a7b49bcb1244d060f74b429~mv2.jpg"),
@@ -410,11 +412,9 @@ export const VOLUNTEER = {
     wix("9f2b42_3c210efb0a424187be9e9503ac627df5~mv2.jpg"),
     wix("9f2b42_64c7924c685947a1b3b65db5f6c4436a~mv2.jpg")
   ],
-  hero: ph1072
+  hero: pershing("F64A1072.jpg")
 };
 
-const chargers = (file) =>
-  `${process.env.PUBLIC_URL}/chargers-2021/${file}`;
 
 export const CHARGERS = {
   eyebrow: "Featured Project / Off-Duty",
@@ -458,6 +458,7 @@ export const CHARGERS = {
   ],
   hero: chargers("DSC_0414.jpg")
 };
+
 
 export const CLIENT_LOGOS = [
   "U.S. ARMY",
