@@ -1,57 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { CHARGERS } from "../data/mock";
 
 const Chargers = () => {
+  const [expanded, setExpanded] = useState(false);
+  const visibleImages = expanded ? CHARGERS.images : CHARGERS.images.slice(0, 6);
+
   return (
     <section
       id="chargers"
-      style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "80px 16px",
-        background: "#0a0a0a",
-        color: "#e9e3d6",
-        borderTop: "1px solid #262017"
-      }}
+      className="border-t border-[var(--border)] bg-[var(--bg)] py-16 md:py-20"
     >
-      <p style={{ color: "#c9a961", fontSize: "12px", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-        Chargers Test Section
-      </p>
+      <div className="mx-auto max-w-6xl px-4 md:px-6">
+        <div className="mb-8 md:mb-10">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+            {CHARGERS.eyebrow}
+          </p>
 
-      <h2 style={{ fontSize: "40px", margin: "12px 0 8px" }}>
-        {CHARGERS.title}
-      </h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-[var(--text)] md:text-4xl">
+            {CHARGERS.title}
+          </h2>
 
-      <p style={{ color: "#b7b0a1", marginBottom: "24px" }}>
-        {CHARGERS.subtitle}
-      </p>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--muted)] md:text-base">
+            {CHARGERS.body[0]}
+          </p>
+        </div>
 
-      <img
-        src={CHARGERS.hero}
-        alt="Chargers hero"
-        style={{
-          width: "100%",
-          maxWidth: "900px",
-          display: "block",
-          border: "1px solid #262017",
-          marginBottom: "24px"
-        }}
-      />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {visibleImages.map((src, index) => (
+            <figure
+              key={`${src}-${index}`}
+              className="overflow-hidden rounded-2xl border border-[var(--border)] bg-black/5"
+            >
+              <img
+                src={src}
+                alt={`Chargers 2021 frame ${index + 1}`}
+                className="h-72 w-full object-cover"
+                loading="lazy"
+              />
+            </figure>
+          ))}
+        </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
-        {CHARGERS.images.slice(0, 6).map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt={`Chargers frame ${i + 1}`}
-            style={{
-              width: "100%",
-              height: "220px",
-              objectFit: "cover",
-              border: "1px solid #262017"
-            }}
-          />
-        ))}
+        {CHARGERS.images.length > 6 && (
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setExpanded((prev) => !prev)}
+              className="rounded-full border border-[var(--border)] px-5 py-2 text-sm font-medium text-[var(--text)] transition hover:bg-black/5"
+            >
+              {expanded ? "Show less" : "View all photos"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
