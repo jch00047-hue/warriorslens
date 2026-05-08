@@ -1,3 +1,31 @@
+// src/data/mock.js
+
+// Pershing / Creating Smiles local assets (JPG masters)
+import ph1072 from "../assets/pershing/F64A1072.jpg";
+import ph1079 from "../assets/pershing/F64A1079.jpg";
+import ph1080 from "../assets/pershing/F64A1080.jpg";
+import ph1101 from "../assets/pershing/F64A1101.jpg";
+import ph1104 from "../assets/pershing/F64A1104.jpg";
+import ph1113 from "../assets/pershing/F64A1113.jpg";
+import ph1117 from "../assets/pershing/F64A1117.jpg";
+import ph1133 from "../assets/pershing/F64A1133.jpg";
+import ph1137 from "../assets/pershing/F64A1137.jpg";
+import ph1143 from "../assets/pershing/F64A1143.jpg";
+import ph1150 from "../assets/pershing/F64A1150.jpg";
+import ph1158 from "../assets/pershing/F64A1158.jpg";
+import ph1163 from "../assets/pershing/F64A1163.jpg";
+import ph1171 from "../assets/pershing/F64A1171.jpg";
+import ph1179 from "../assets/pershing/F64A1179.jpg";
+import ph1183 from "../assets/pershing/F64A1183.jpg";
+import ph1189 from "../assets/pershing/F64A1189.jpg";
+import ph1190 from "../assets/pershing/F64A1190.jpg";
+import ph1207 from "../assets/pershing/F64A1207.jpg";
+import ph1214 from "../assets/pershing/F64A1214.jpg";
+import ph1220 from "../assets/pershing/F64A1220.jpg";
+import ph1225 from "../assets/pershing/F64A1225.jpg";
+import ph1226 from "../assets/pershing/F64A1226.jpg";
+import ph1230 from "../assets/pershing/F64A1230.jpg";
+
 // Warriors Lens portfolio data
 // Imagery sourced from the existing Wix portfolio + DVIDS public portfolio (storyteller ID 1685082)
 
@@ -356,6 +384,33 @@ export const VOLUNTEER = {
     { value: "0", label: "Cost To School" }
   ],
   images: [
+    // Local Pershing frames
+    ph1072,
+    ph1079,
+    ph1080,
+    ph1101,
+    ph1104,
+    ph1113,
+    ph1117,
+    ph1133,
+    ph1137,
+    ph1143,
+    ph1150,
+    ph1158,
+    ph1163,
+    ph1171,
+    ph1179,
+    ph1183,
+    ph1189,
+    ph1190,
+    ph1207,
+    ph1214,
+    ph1220,
+    ph1225,
+    ph1226,
+    ph1230,
+
+    // Wix-hosted frames
     wix("9f2b42_b241861028274ac193775a9481a9f544~mv2.jpg"),
     wix("9f2b42_9dd5671d4a7b49bcb1244d060f74b429~mv2.jpg"),
     wix("9f2b42_7c196c6008554e6e858469099607a7e6~mv2.jpg"),
@@ -373,7 +428,7 @@ export const VOLUNTEER = {
     wix("9f2b42_3c210efb0a424187be9e9503ac627df5~mv2.jpg"),
     wix("9f2b42_64c7924c685947a1b3b65db5f6c4436a~mv2.jpg")
   ],
-  hero: wix("9f2b42_466cca52283749759aef07007936b0bd~mv2.jpg")
+  hero: ph1072
 };
 
 const chargers = (file) =>
