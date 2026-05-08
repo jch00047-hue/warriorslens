@@ -1,46 +1,44 @@
-eyebrow: "Featured Project / Off-Duty"
-title: "Game Day — LA Chargers Season Opener 2021"
-subtitle: "Personal Photography • FedExForum"
-
+eyebrow: Featured Project / Off-Duty
+title: Chargers 2021
+subtitle: Personal Photography • FedExField
+heading: "Game day through <em>my lens.</em>"
 meta:
-  - k: "PROJECT TYPE"
-    v: "Personal Photography / Sports Documentary"
-  - k: "DATE"
-    v: "September 2021"
-  - k: "LOCATION"
-    v: "FedExForum, Landover, MD"
-  - k: "ROLE"
-    v: "Photographer"
-
+  - k: PROJECT TYPE
+    v: Personal Photography / Sports Documentary
+  - k: DATE
+    v: September 2021
+  - k: LOCATION
+    v: FedExField, Landover, MD
+  - k: ROLE
+    v: Photographer
 body:
-  - >-
-    September 2021 — FedExForum, Landover, Maryland. My favorite team opens
-    the season against Washington. As a photographer first and fan second,
-    I documented the atmosphere, the plays, and the moment that would define
-    both teams' year: Ryan Fitzpatrick's hip injury in the second quarter.
-  - >-
-    These frames capture the energy of NFL game day through a combat camera
-    lens turned toward the sport I love. From the pre-game electric
-    anticipation through the injury that would reshape the season, every shot
-    tells the story of that singular Sunday at FedExForum.
-
-hero: "/uploads/chargers-2021/DSC_0414.jpg"
-
+  - September 2021 — FedExField, Landover, Maryland. This gallery documents the Chargers season opener against Washington through a documentary lens, focused on atmosphere, crowd energy, and the visual rhythm of the day.
+  - More than a sports gallery, the work reflects the same instincts that shape the rest of Warriors Lens: anticipation, timing, and finding narrative inside fast-moving environments.
+stats:
+  - value: "17"
+    label: Frames Curated
+  - value: "1"
+    label: Season Opener
+  - value: NFL
+    label: Game Day
+  - value: MD
+    label: Landover
 images:
-  - src: "/uploads/chargers-2021/DSC_0414.jpg"
-  - src: "/uploads/chargers-2021/DSC_0415.jpg"
-  - src: "/uploads/chargers-2021/DSC_0430.jpg"
-  - src: "/uploads/chargers-2021/DSC_0443.jpg"
-  - src: "/uploads/chargers-2021/DSC_0486.jpg"
-  - src: "/uploads/chargers-2021/DSC_0498.jpg"
-  - src: "/uploads/chargers-2021/DSC_0613.jpg"
-  - src: "/uploads/chargers-2021/DSC_0697.jpg"
-  - src: "/uploads/chargers-2021/DSC_0712.jpg"
-  - src: "/uploads/chargers-2021/DSC_0729.jpg"
-  - src: "/uploads/chargers-2021/DSC_0746.jpg"
-  - src: "/uploads/chargers-2021/DSC_0756.jpg"
-  - src: "/uploads/chargers-2021/DSC_0769.jpg"
-  - src: "/uploads/chargers-2021/DSC_0805.jpg"
-  - src: "/uploads/chargers-2021/DSC_0848.jpg"
-  - src: "/uploads/chargers-2021/DSC_0964.jpg"
-  - src: "/uploads/chargers-2021/DSC_0998.jpg"
+  - DSC_0414.jpg
+  - DSC_0415.jpg
+  - DSC_0430.jpg
+  - DSC_0443.jpg
+  - DSC_0486.jpg
+  - DSC_0498.jpg
+  - DSC_0613.jpg
+  - DSC_0697.jpg
+  - DSC_0712.jpg
+  - DSC_0729.jpg
+  - DSC_0746.jpg
+  - DSC_0756.jpg
+  - DSC_0769.jpg
+  - DSC_0805.jpg
+  - DSC_0848.jpg
+  - DSC_0964.jpg
+  - DSC_0998.jpg
+hero: DSC_0414.jpg
