@@ -8,6 +8,7 @@ import About from "./components/About";
 import PortfolioGallery from "./components/PortfolioGallery";
 import Capabilities from "./components/Capabilities";
 import Volunteer from "./components/Volunteer";
+import Chargers from "./components/Chargers";
 import Experience from "./components/Experience";
 import Marquee from "./components/Marquee";
 import Contact from "./components/Contact";
@@ -27,6 +28,7 @@ const Home = () => {
       },
       { threshold: 0.12 }
     );
+
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
@@ -41,6 +43,7 @@ const Home = () => {
         <PortfolioGallery />
         <Capabilities />
         <Volunteer />
+        <Chargers />
         <Experience />
         <Contact />
       </main>
