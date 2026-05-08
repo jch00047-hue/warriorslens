@@ -7,8 +7,11 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import PortfolioGallery from "./components/PortfolioGallery";
 import Capabilities from "./components/Capabilities";
+import Coursework from "./components/Coursework";
+import Campaigns from "./components/Campaigns";
 import Volunteer from "./components/Volunteer";
 import Chargers from "./components/Chargers";
+import Press from "./components/Press";
 import Experience from "./components/Experience";
 import Marquee from "./components/Marquee";
 import Contact from "./components/Contact";
@@ -41,8 +44,11 @@ const Home = () => {
         <About />
         <PortfolioGallery />
         <Capabilities />
+        <Coursework />
+        <Campaigns />
         <Volunteer />
         <Chargers />
+        <Press />
         <Experience />
         <Contact />
       </main>
