@@ -376,7 +376,8 @@ export const VOLUNTEER = {
   hero: wix("9f2b42_466cca52283749759aef07007936b0bd~mv2.jpg")
 };
 
-const chargers = (file) => `/static/uploads/chargers-2021/${file}`;
+const chargers = (file) =>
+  `${process.env.PUBLIC_URL}/uploads/chargers-2021/${file}`;
 
 export const CHARGERS = {
   eyebrow: "Featured Project / Off-Duty",
