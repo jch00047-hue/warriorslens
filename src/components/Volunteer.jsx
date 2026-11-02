@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { VOLUNTEER } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
+import { media } from "../data/content";
 import { HeartHandshake, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const Volunteer = () => {
+  const { volunteer: VOLUNTEER } = useContent();
   const [open, setOpen] = useState(null);
   const total = VOLUNTEER.images.length + 1;
   const next = () => setOpen((i) => (i + 1) % total);
@@ -67,7 +69,7 @@ const Volunteer = () => {
           className="block w-full cine-card relative overflow-hidden bg-[#141414] aspect-[21/9] reveal mb-4 lg:mb-5 group"
         >
           <img
-            src={VOLUNTEER.hero}
+            src={media(VOLUNTEER.hero)}
             alt="Creating Smiles \u2014 Pursuing Hill Elementary"
             className="absolute inset-0 w-full h-full object-cover cine-img"
           />
@@ -107,7 +109,7 @@ const Volunteer = () => {
                 className={`cine-card relative overflow-hidden bg-[#141414] ${span}`}
               >
                 <img
-                  src={src}
+                  src={media(src)}
                   alt={`Pursuing Hill ${i + 2}`}
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover cine-img"
@@ -182,7 +184,7 @@ const Volunteer = () => {
             <ChevronRight size={20} />
           </button>
           <img
-            src={open === 0 ? VOLUNTEER.hero : VOLUNTEER.images[open - 1]}
+            src={media(open === 0 ? VOLUNTEER.hero : VOLUNTEER.images[open - 1])}
             alt={`Frame ${open + 1}`}
             className="max-h-[85vh] max-w-[85vw] object-contain"
             onClick={(e) => e.stopPropagation()}

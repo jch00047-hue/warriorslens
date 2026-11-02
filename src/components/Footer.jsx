@@ -1,7 +1,9 @@
 import React from "react";
-import { SITE } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
 
 const Footer = () => {
+  const { site: SITE } = useContent();
+
   return (
     <footer className="bg-[#080808] border-t border-white/5">
       <div className="max-w-[1500px] mx-auto px-6 lg:px-10 pt-16 pb-10">
@@ -15,7 +17,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="font-mono-x text-[10px] tracking-[0.3em] text-[#5a5446] mb-3">NAV</div>
             <ul className="space-y-2 text-sm">
-              {["Work", "About", "Capabilities", "Volunteer", "Experience", "Contact"].map((n) => (
+              {["Work", "About", "Capabilities", "Volunteer", "Experience", "Press", "Coursework", "Insights", "Journal", "Contact"].map((n) => (
                 <li key={n}><a href={`#${n.toLowerCase()}`} className="text-[#bdb6a5] hover:text-[#c9a961] link-underline">{n}</a></li>
               ))}
             </ul>

@@ -1,0 +1,66 @@
+{
+  "eyebrow": "Featured Project / Off-Duty",
+  "title": "Chargers 2021",
+  "subtitle": "Personal Photography • FedExField",
+  "heading": "Game day through <em>my lens.</em>",
+  "meta": [
+    {
+      "k": "PROJECT TYPE",
+      "v": "Personal Photography / Sports Documentary"
+    },
+    {
+      "k": "DATE",
+      "v": "September 2021"
+    },
+    {
+      "k": "LOCATION",
+      "v": "FedExField, Landover, MD"
+    },
+    {
+      "k": "ROLE",
+      "v": "Photographer"
+    }
+  ],
+  "body": [
+    "September 2021 — FedExField, Landover, Maryland. I photographed the Chargers season opener against Washington, documenting the atmosphere, fan energy, and key moments from the game.",
+    "This gallery captures the pace and emotion of NFL game day while keeping the same visual tone and storytelling style used throughout the rest of the portfolio."
+  ],
+  "stats": [
+    {
+      "value": "17",
+      "label": "Frames Curated"
+    },
+    {
+      "value": "1",
+      "label": "Season Opener"
+    },
+    {
+      "value": "NFL",
+      "label": "Game Day"
+    },
+    {
+      "value": "MD",
+      "label": "Landover"
+    }
+  ],
+  "images": [
+    "/chargers-2021/DSC_0414.jpg",
+    "/chargers-2021/DSC_0415.jpg",
+    "/chargers-2021/DSC_0430.jpg",
+    "/chargers-2021/DSC_0443.jpg",
+    "/chargers-2021/DSC_0486.jpg",
+    "/chargers-2021/DSC_0498.jpg",
+    "/chargers-2021/DSC_0613.jpg",
+    "/chargers-2021/DSC_0697.jpg",
+    "/chargers-2021/DSC_0712.jpg",
+    "/chargers-2021/DSC_0729.jpg",
+    "/chargers-2021/DSC_0746.jpg",
+    "/chargers-2021/DSC_0756.jpg",
+    "/chargers-2021/DSC_0769.jpg",
+    "/chargers-2021/DSC_0805.jpg",
+    "/chargers-2021/DSC_0848.jpg",
+    "/chargers-2021/DSC_0964.jpg",
+    "/chargers-2021/DSC_0998.jpg"
+  ],
+  "hero": "/chargers-2021/DSC_0414.jpg"
+}

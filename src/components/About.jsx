@@ -1,8 +1,11 @@
 import React from "react";
-import { ABOUT, PORTRAIT_IMAGE, SITE } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
+import { media } from "../data/content";
 import { Check } from "lucide-react";
 
 const About = () => {
+  const { about: ABOUT, site: SITE } = useContent();
+
   return (
     <section id="about" className="relative py-28 lg:py-40">
       <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
@@ -15,7 +18,7 @@ const About = () => {
           <div className="lg:col-span-5 reveal">
             <div className="relative">
               <div className="aspect-[3/4] overflow-hidden bg-[#1a1a1a]">
-                <img src={PORTRAIT_IMAGE} alt="SSG Julio C. Hernandez" className="w-full h-full object-cover grayscale-[0.15] cine-img" />
+                <img src={media(ABOUT.portrait)} alt="SSG Julio C. Hernandez" className="w-full h-full object-cover grayscale-[0.15] cine-img" />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-[#c9a961] text-[#0a0a0a] px-4 py-2">
                 <div className="font-mono-x text-[10px] tracking-[0.25em]">{SITE.rank} • {SITE.branch}</div>

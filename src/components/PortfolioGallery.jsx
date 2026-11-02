@@ -1,14 +1,16 @@
 import React, { useMemo, useState } from "react";
-import { CATEGORIES, PROJECTS } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
+import { media } from "../data/content";
 import { ArrowUpRight, X } from "lucide-react";
 
 const PortfolioGallery = () => {
+  const { work } = useContent();
   const [active, setActive] = useState("All");
   const [open, setOpen] = useState(null);
 
   const items = useMemo(
-    () => (active === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === active)),
-    [active]
+    () => (active === "All" ? work.projects : work.projects.filter((p) => p.category === active)),
+    [active, work.projects]
   );
 
   return (
@@ -30,7 +32,7 @@ const PortfolioGallery = () => {
         </div>
 
         <div className="flex flex-wrap items-center gap-2 mb-10 reveal">
-          {CATEGORIES.map((c) => (
+          {work.categories.map((c) => (
             <button
               key={c}
               onClick={() => setActive(c)}
@@ -54,7 +56,7 @@ const PortfolioGallery = () => {
               className={`cine-card group relative overflow-hidden bg-[#141414] ${p.span} text-left`}
               style={{ gridRowEnd: undefined }}
             >
-              <img src={p.src} alt={p.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover cine-img" />
+              <img src={media(p.src)} alt={p.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover cine-img" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent opacity-90 group-hover:opacity-100" />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/0 group-hover:ring-[#c9a961]/60 transition-colors" />
               <div className="absolute top-3 left-3 font-mono-x text-[10px] tracking-[0.25em] text-[#c9a961]">
@@ -84,7 +86,7 @@ const PortfolioGallery = () => {
           </button>
           <div className="max-w-6xl w-full grid lg:grid-cols-3 gap-6" onClick={(e) => e.stopPropagation()}>
             <div className="lg:col-span-2 bg-[#141414]">
-              <img src={open.src} alt={open.title} className="w-full max-h-[80vh] object-contain" />
+              <img src={media(open.src)} alt={open.title} className="w-full max-h-[80vh] object-contain" />
             </div>
             <div className="flex flex-col justify-end p-2">
               <div className="font-mono-x text-[11px] tracking-[0.3em] text-[#c9a961] mb-3">{open.category.toUpperCase()}</div>

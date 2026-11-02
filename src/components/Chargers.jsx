@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { CHARGERS } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
+import { media } from "../data/content";
 
 const Chargers = () => {
+  const { chargers: CHARGERS } = useContent();
   const [expanded, setExpanded] = useState(false);
   const visibleImages = expanded ? CHARGERS.images : CHARGERS.images.slice(0, 8);
 
@@ -50,7 +52,7 @@ const Chargers = () => {
 
         <div className="mt-10 overflow-hidden rounded-3xl border border-[var(--border)]">
           <img
-            src={CHARGERS.hero}
+            src={media(CHARGERS.hero)}
             alt={CHARGERS.title}
             className="h-[340px] w-full object-cover md:h-[520px]"
             loading="eager"
@@ -91,7 +93,7 @@ const Chargers = () => {
               className="overflow-hidden rounded-2xl border border-[var(--border)] bg-black/5"
             >
               <img
-                src={src}
+                src={media(src)}
                 alt={`Chargers 2021 frame ${index + 1}`}
                 className="h-72 w-full object-cover"
                 loading="lazy"

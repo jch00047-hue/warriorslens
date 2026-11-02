@@ -1,0 +1,192 @@
+{
+  "categories": [
+    "All",
+    "Combat Camera",
+    "Joint Ops",
+    "Maritime",
+    "Training",
+    "Portrait"
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "title": "Operation Inherent Resolve",
+      "category": "Combat Camera",
+      "location": "Iraq / Syria",
+      "year": "2022–23",
+      "span": "col-span-2 row-span-2",
+      "src": "https://static.wixstatic.com/media/9f2b42_a99c89243e07420ca7bbfb9570d0c0bc~mv2.jpg/v1/fit/w_1600,h_1067,q_90,enc_avif,quality_auto/p1.jpg"
+    },
+    {
+      "id": "p2",
+      "title": "JEMX–25 Joint Medical Exercise",
+      "category": "Joint Ops",
+      "location": "U.S. 5th Fleet AOR",
+      "year": "2025",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2506/9104995/600x375_q95.jpg"
+    },
+    {
+      "id": "p3",
+      "title": "Realistic Medic Scenarios",
+      "category": "Joint Ops",
+      "location": "JEMX–25",
+      "year": "2025",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2506/9101672/600x375_q95.jpg"
+    },
+    {
+      "id": "p4",
+      "title": "Tactical Lanes Training",
+      "category": "Training",
+      "location": "JEMX–25",
+      "year": "2025",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2506/9098581/600x375_q95.jpg"
+    },
+    {
+      "id": "p5",
+      "title": "Joint Air-Lift Operations",
+      "category": "Joint Ops",
+      "location": "JEMX–25",
+      "year": "2025",
+      "span": "row-span-2",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2506/9095523/600x375_q95.jpg"
+    },
+    {
+      "id": "p6",
+      "title": "Water Survival Training",
+      "category": "Maritime",
+      "location": "PATFORSWA, SW Asia",
+      "year": "2024",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2407/8560553/600x375_q95.jpg"
+    },
+    {
+      "id": "p7",
+      "title": "FASTCENT TCCC Training",
+      "category": "Training",
+      "location": "5th Fleet AOR",
+      "year": "2024",
+      "span": "col-span-2",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2407/8555578/600x375_q95.jpg"
+    },
+    {
+      "id": "p8",
+      "title": "VBSS — Pakistan Navy",
+      "category": "Maritime",
+      "location": "NAVCENT",
+      "year": "2024",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2408/8562887/600x375_q95.jpg"
+    },
+    {
+      "id": "p9",
+      "title": "USCGC Glen Harris — Pyrotechnics",
+      "category": "Maritime",
+      "location": "5th Fleet AOR",
+      "year": "2024",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2407/8542442/600x375_q95.jpg"
+    },
+    {
+      "id": "p10",
+      "title": "Trilateral Exercise — Iraq & Kuwait",
+      "category": "Joint Ops",
+      "location": "5th Fleet AOR",
+      "year": "2024",
+      "span": "col-span-2",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2407/8542416/600x375_q95.jpg"
+    },
+    {
+      "id": "p11",
+      "title": "Egypt Assumes CTF–154 Command",
+      "category": "Joint Ops",
+      "location": "Combined Maritime Forces",
+      "year": "2024",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2407/8513141/600x375_q95.jpg"
+    },
+    {
+      "id": "p12",
+      "title": "Compass Rose III — Day Four",
+      "category": "Maritime",
+      "location": "5th Fleet AOR",
+      "year": "2024",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2406/8482806/600x375_q95.jpg"
+    },
+    {
+      "id": "p13",
+      "title": "Inspired Union 2024",
+      "category": "Joint Ops",
+      "location": "NAVCENT",
+      "year": "2024",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2405/8382302/600x375_q95.jpg"
+    },
+    {
+      "id": "p14",
+      "title": "ANZAC Day — NSA Bahrain",
+      "category": "Portrait",
+      "location": "Bahrain",
+      "year": "2024",
+      "span": "",
+      "src": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2404/8362019/600x375_q95.jpg"
+    },
+    {
+      "id": "p15",
+      "title": "Coalition Fire Support",
+      "category": "Combat Camera",
+      "location": "CJTF–OIR",
+      "year": "2023",
+      "span": "",
+      "src": "https://static.wixstatic.com/media/9f2b42_deee7915d9fe4618b5227abd0eb9f767~mv2.jpg/v1/fit/w_1200,h_675,q_90,enc_avif,quality_auto/p2.jpg"
+    },
+    {
+      "id": "p16",
+      "title": "Rotary Wing Insertion",
+      "category": "Combat Camera",
+      "location": "CENTCOM AOR",
+      "year": "2022",
+      "span": "col-span-2",
+      "src": "https://static.wixstatic.com/media/9f2b42_a584f74a975a4fdf9469e44583330604~mv2.jpg/v1/fit/w_1600,h_900,q_90,enc_avif,quality_auto/p7.jpg"
+    },
+    {
+      "id": "p17",
+      "title": "Operator Portrait",
+      "category": "Portrait",
+      "location": "FOB Union III",
+      "year": "2023",
+      "span": "",
+      "src": "https://static.wixstatic.com/media/9f2b42_1518e55d8b89412ca02ad972c2987b0e~mv2.jpg/v1/fit/w_1200,h_1588,q_90,enc_avif,quality_auto/p5.jpg"
+    },
+    {
+      "id": "p18",
+      "title": "After Action",
+      "category": "Portrait",
+      "location": "Iraq",
+      "year": "2022",
+      "span": "",
+      "src": "https://static.wixstatic.com/media/9f2b42_b3735c6af77841aa954ca8f5b5d9fecb~mv2.jpg/v1/fit/w_1200,h_800,q_90,enc_avif,quality_auto/p11.jpg"
+    },
+    {
+      "id": "p19",
+      "title": "Leadership In Focus — The Platoon Sergeant",
+      "category": "Portrait",
+      "location": "Fort Meade, MD",
+      "year": "2024",
+      "span": "",
+      "src": "https://static.wixstatic.com/media/9f2b42_e3850b3ff46045bda5fb835bf1b4eba1~mv2.jpg/v1/fit/w_1200,h_1200,q_90,enc_avif,quality_auto/p19.jpg"
+    },
+    {
+      "id": "p20",
+      "title": "Deployed Designs — Unit Graphics",
+      "category": "Combat Camera",
+      "location": "CJTF–OIR",
+      "year": "2023",
+      "span": "",
+      "src": "https://static.wixstatic.com/media/9f2b42_3413648e57ab4e05963081c4aef41184~mv2.png/v1/fit/w_1200,h_1200,q_90,enc_avif,quality_auto/p20.png"
+    }
+  ]
+}

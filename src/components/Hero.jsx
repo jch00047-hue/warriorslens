@@ -1,13 +1,15 @@
 import React from "react";
 import { ArrowDownRight, Crosshair } from "lucide-react";
-import { HERO_IMAGE, SITE, HERO_STATS } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
+import { media } from "../data/content";
 
 const Hero = () => {
+  const { site: SITE, hero } = useContent();
   const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   return (
     <section id="top" className="relative w-full min-h-screen overflow-hidden">
       <div className="absolute inset-0">
-        <img src={HERO_IMAGE} alt="Combat photography" className="w-full h-full object-cover" />
+        <img src={media(hero.image)} alt="Combat photography" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-[#0a0a0a]/40 to-[#0a0a0a]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_rgba(0,0,0,0.7)_100%)]" />
       </div>
@@ -59,7 +61,7 @@ const Hero = () => {
       {/* Stats bar */}
       <div className="relative z-10 border-t border-white/10 bg-[#0a0a0a]/60 backdrop-blur-sm">
         <div className="max-w-[1500px] mx-auto px-6 lg:px-10 grid grid-cols-3 lg:grid-cols-6 divide-x divide-white/10">
-          {HERO_STATS.filter((s) => !s.hidden).map((s) => (
+          {hero.stats.filter((s) => !s.hidden).map((s) => (
             <div key={s.label} className="py-5 lg:py-6 px-5 first:pl-0">
               <div className="font-display text-2xl lg:text-3xl text-[#f1ecdf]">{s.value}</div>
               <div className="font-mono-x text-[10px] tracking-[0.25em] text-[#8a8275] mt-1">{s.label.toUpperCase()}</div>

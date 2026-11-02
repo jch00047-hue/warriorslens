@@ -18,7 +18,7 @@ export const SITE = {
   branch: "U.S. Army",
   role: "Combat Photographer & Public Affairs Specialist",
   tagline: "Mission-focused operational visual narratives.",
-  location: "Fort Meade, MD — 55th Combat Camera",
+  location: "Fort Bliss, TX — 5th Armored Brigade",
   email: "juliochernandez18@gmail.com",
   emailMil: "julio.c.hernandez45.mil@army.mil",
   socials: {
@@ -35,6 +35,7 @@ export const NAV = [
   { id: "volunteer", label: "Volunteer" },
   { id: "chargers", label: "Chargers 2021" },
   { id: "experience", label: "Experience" },
+  { id: "journal", label: "Journal" },
   { id: "contact", label: "Contact" }
 ];
 
@@ -62,12 +63,13 @@ export const ABOUT = {
     "I am Staff Sgt. Julio C. Hernandez, U.S. Army. I enlisted in March 2013 as a Military Police Soldier, beginning my career at Fort Polk (now Fort Johnson), Louisiana, in roles from assistant gunner to senior patrol officer and team leader.",
     "I served in Korea in 2016 as a patrol and radiotelephone operator, then at Fort Bliss, Texas, leading patrol teams. In 2018 I mobilized to the southern border in support of national defense operations — the experience that sharpened my eye for documentation in the field.",
     "In 2020 I realigned with my real passion: visual storytelling. I attended the Mass Communications Foundations Course and the Graphic Design Course at DINFOS, then joined the 55th Signal Company (Combat Camera) at Fort Meade as a squad leader and Visual Information Specialist.",
-    "I deployed to Iraq and Syria as Combat Camera Team Lead for CJTF–Operation Inherent Resolve, and most recently served as Combat Camera Team Lead for Navy Central Command (NAVCENT) Public Affairs across joint and multinational operations. Now reclassified as a Public Affairs Specialist, I’m completing my B.S. in Integrated Marketing Communications at West Virginia University."
+    "I deployed to Iraq and Syria as Combat Camera Team Lead for CJTF–Operation Inherent Resolve, and served as Combat Camera Team Lead for Navy Central Command (NAVCENT) Public Affairs across joint and multinational operations.",
+    "I’m now back at Fort Bliss, Texas, with the 5th Armored Brigade — serving as a Public Affairs Specialist and bringing theater-level Combat Camera and NAVCENT Public Affairs experience to a brigade formation. I’m also completing my B.S. in Integrated Marketing Communications at West Virginia University."
   ],
   highlights: [
+    "Public Affairs Specialist — 5th Armored Brigade",
     "Combat Camera Team Lead — CJTF–OIR",
     "Combat Camera Team Lead — NAVCENT PA",
-    "55th Signal Company (Combat Camera)",
     "DINFOS — Mass Comm & Graphic Design"
   ]
 };
@@ -293,6 +295,13 @@ export const CAPABILITIES = [
 
 
 export const EXPERIENCE = [
+  {
+    year: "2026 — Present",
+    role: "Public Affairs Specialist (46S)",
+    org: "5th Armored Brigade",
+    location: "Fort Bliss, TX",
+    body: "Back at Fort Bliss with the 5th Armored Brigade, supporting brigade public affairs — command communication, unit features, command portraits, and training documentation across the formation."
+  },
   {
     year: "2024 — 2025",
     role: "Combat Camera Team Lead, NAVCENT PA",

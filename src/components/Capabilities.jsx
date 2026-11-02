@@ -1,8 +1,10 @@
 import React from "react";
-import { CAPABILITIES } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
 import { ArrowRight } from "lucide-react";
 
 const Capabilities = () => {
+  const { capabilities } = useContent();
+
   return (
     <section id="capabilities" className="py-24 lg:py-32 bg-[#0c0c0c] border-y border-white/5">
       <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
@@ -21,7 +23,7 @@ const Capabilities = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-px bg-white/10 reveal">
-          {CAPABILITIES.map((c) => (
+          {capabilities.items.map((c) => (
             <div key={c.code} className="group bg-[#0c0c0c] p-8 lg:p-10 hover:bg-[#101010] transition-colors">
               <div className="flex items-start justify-between">
                 <div className="font-mono-x text-[11px] tracking-[0.3em] text-[#c9a961]">{c.code}</div>

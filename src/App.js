@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "./components/ui/toaster";
+import { ContentProvider } from "./data/ContentProvider";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,6 +11,10 @@ import Capabilities from "./components/Capabilities";
 import Volunteer from "./components/Volunteer";
 import Chargers from "./components/Chargers";
 import Experience from "./components/Experience";
+import Press from "./components/Press";
+import Coursework from "./components/Coursework";
+import Insights from "./components/Insights";
+import Journal from "./components/Journal";
 import Marquee from "./components/Marquee";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -44,6 +49,10 @@ const Home = () => {
         <Volunteer />
         <Chargers />
         <Experience />
+        <Press />
+        <Coursework />
+        <Insights />
+        <Journal />
         <Contact />
       </main>
       <Footer />
@@ -54,11 +63,13 @@ const Home = () => {
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <ContentProvider>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </ContentProvider>
   );
 }
 

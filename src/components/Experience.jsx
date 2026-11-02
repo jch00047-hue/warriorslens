@@ -1,7 +1,9 @@
 import React from "react";
-import { EXPERIENCE } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
 
 const Experience = () => {
+  const { experience } = useContent();
+
   return (
     <section id="experience" className="py-24 lg:py-32">
       <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
@@ -20,7 +22,7 @@ const Experience = () => {
         </div>
 
         <ol className="relative reveal">
-          {EXPERIENCE.map((e, i) => (
+          {experience.entries.map((e, i) => (
             <li key={i} className="grid lg:grid-cols-12 gap-6 lg:gap-10 py-8 lg:py-10 border-t border-white/10 first:border-t-0 group">
               <div className="lg:col-span-3 flex items-start gap-4">
                 <span className="mt-2 inline-block w-2 h-2 bg-[#c9a961] group-hover:scale-150 transition-transform" />

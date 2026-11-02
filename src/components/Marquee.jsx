@@ -1,8 +1,9 @@
 import React from "react";
-import { CLIENT_LOGOS } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
 
 const Marquee = () => {
-  const items = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
+  const { marquee } = useContent();
+  const items = [...marquee.items, ...marquee.items];
   return (
     <section className="border-y border-white/5 bg-[#0a0a0a] overflow-hidden py-6">
       <div className="flex animate-marquee whitespace-nowrap">

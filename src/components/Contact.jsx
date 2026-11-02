@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Mail, Send, Linkedin, Camera, MapPin } from "lucide-react";
-import { SITE } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { useToast } from "../hooks/use-toast";
 
 const Contact = () => {
+  const { site: SITE } = useContent();
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", unit: "", scope: "", message: "" });
 
@@ -37,7 +38,7 @@ const Contact = () => {
       <div className="max-w-[1500px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5 reveal">
           <div className="flex items-center gap-4 mb-5">
-            <span className="font-mono-x text-[11px] tracking-[0.3em] text-[#c9a961]">06 / REQUEST SUPPORT</span>
+            <span className="font-mono-x text-[11px] tracking-[0.3em] text-[#c9a961]">10 / REQUEST SUPPORT</span>
           </div>
           <h2 className="font-display text-5xl lg:text-6xl leading-[0.95] text-[#f1ecdf] tracking-tight">
             Tell me the <span className="italic font-light text-[#c9a961]">mission.</span>

@@ -1,0 +1,376 @@
+backend:
+  name: github
+  repo: jch00047-hue/warriorslens
+  branch: main
+
+# Images uploaded in the editor are committed to public/uploads and referenced
+# as /warriorslens/uploads/<file> on the built site.
+media_folder: "public/uploads"
+public_folder: "/warriorslens/uploads"
+
+site_url: "https://jch00047-hue.github.io/warriorslens/"
+display_url: "https://jch00047-hue.github.io/warriorslens/"
+logo_url: "https://jch00047-hue.github.io/warriorslens/assets/wl-logo.svg"
+
+publish_mode: simple
+
+collections:
+  - name: site
+    label: "1 · Identity & contact"
+    delete: false
+    format: json
+    files:
+      - name: site
+        label: "Identity, posting, contact"
+        file: "public/content/site.json"
+        fields:
+          - { name: brand, label: "Brand name", widget: string }
+          - { name: owner, label: "Owner full name", widget: string }
+          - { name: rank, label: "Rank", widget: string }
+          - { name: branch, label: "Branch of service", widget: string }
+          - { name: role, label: "Role / title", widget: string }
+          - { name: tagline, label: "Site tagline", widget: string }
+          - name: location
+            label: "Current posting"
+            widget: string
+            hint: "Shows in the hero stats strip, the contact block and the footer."
+          - { name: email, label: "Email — personal", widget: string }
+          - { name: emailMil, label: "Email — .mil", widget: string, required: false }
+          - name: socials
+            label: "Social links"
+            widget: object
+            fields:
+              - { name: linkedin, label: "LinkedIn URL", widget: string }
+              - { name: dvids, label: "DVIDS portfolio URL", widget: string }
+
+  - name: hero
+    label: "2 · Hero"
+    delete: false
+    format: json
+    files:
+      - name: hero
+        label: "Background image & stats strip"
+        file: "public/content/hero.json"
+        fields:
+          - { name: image, label: "Hero background image", widget: image }
+          - name: stats
+            label: "Stats strip"
+            widget: list
+            fields:
+              - { name: value, label: "Value", widget: string }
+              - { name: label, label: "Label", widget: string }
+              - { name: hidden, label: "Hide this stat", widget: boolean, required: false, default: false }
+
+  - name: about
+    label: "3 · About"
+    delete: false
+    format: json
+    files:
+      - name: about
+        label: "About copy & portrait"
+        file: "public/content/about.json"
+        fields:
+          - { name: eyebrow, label: "Eyebrow", widget: string }
+          - { name: heading, label: "Heading", widget: string }
+          - name: body
+            label: "Paragraphs"
+            widget: list
+            field: { name: paragraph, label: "Paragraph", widget: text }
+          - name: highlights
+            label: "Highlight chips"
+            widget: list
+            field: { name: highlight, label: "Highlight", widget: string }
+          - { name: portrait, label: "Portrait image", widget: image }
+
+  - name: work
+    label: "4 · Selected work"
+    delete: false
+    format: json
+    files:
+      - name: work
+        label: "Gallery frames & filters"
+        file: "public/content/work.json"
+        fields:
+          - name: categories
+            label: "Filter buttons"
+            widget: list
+            hint: "The first filter must stay \"All\"."
+            field: { name: category, label: "Filter", widget: string }
+          - name: projects
+            label: "Frames"
+            widget: list
+            summary: "{{title}} — {{category}}"
+            fields:
+              - { name: id, label: "ID (unique, no spaces)", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: category, label: "Filter it belongs to", widget: string }
+              - { name: location, label: "Location", widget: string }
+              - { name: year, label: "Year(s)", widget: string }
+              - name: span
+                label: "Tile size in the grid"
+                widget: select
+                required: false
+                options:
+                  - { label: "Normal", value: "" }
+                  - { label: "Wide (2 columns)", value: "col-span-2" }
+                  - { label: "Tall (2 rows)", value: "row-span-2" }
+                  - { label: "Wide + tall", value: "col-span-2 row-span-2" }
+              - { name: src, label: "Image", widget: image }
+
+  - name: capabilities
+    label: "5 · Capabilities"
+    delete: false
+    format: json
+    files:
+      - name: capabilities
+        label: "Capability cards"
+        file: "public/content/capabilities.json"
+        fields:
+          - name: items
+            label: "Cards"
+            widget: list
+            summary: "{{code}} — {{title}}"
+            fields:
+              - { name: code, label: "Number", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: desc, label: "Description", widget: text }
+              - name: items
+                label: "Bulleted deliverables"
+                widget: list
+                field: { name: deliverable, label: "Deliverable", widget: string }
+
+  - name: experience
+    label: "6 · Service history"
+    delete: false
+    format: json
+    files:
+      - name: experience
+        label: "Timeline entries"
+        file: "public/content/experience.json"
+        fields:
+          - name: entries
+            label: "Assignments (newest first)"
+            widget: list
+            summary: "{{year}} — {{role}}"
+            fields:
+              - { name: year, label: "Year(s)", widget: string }
+              - { name: role, label: "Role / title", widget: string }
+              - { name: org, label: "Unit / organization", widget: string }
+              - { name: location, label: "Location", widget: string }
+              - { name: body, label: "Description", widget: text }
+
+  - name: volunteer
+    label: "7 · Volunteer project"
+    delete: false
+    format: json
+    files:
+      - name: volunteer
+        label: "Creating Smiles"
+        file: "public/content/volunteer.json"
+        fields:
+          - { name: eyebrow, label: "Eyebrow", widget: string }
+          - { name: title, label: "Project title", widget: string }
+          - { name: subtitle, label: "Subtitle (the heading splits on 3 words)", widget: string }
+          - name: meta
+            label: "Meta strip"
+            widget: list
+            fields:
+              - { name: k, label: "Label", widget: string }
+              - { name: v, label: "Value", widget: string }
+          - name: body
+            label: "Body paragraphs"
+            widget: list
+            field: { name: paragraph, label: "Paragraph", widget: text }
+          - { name: hero, label: "Project cover image", widget: image }
+          - name: images
+            label: "Gallery images"
+            widget: list
+            field: { name: src, label: "Image", widget: image }
+
+  - name: chargers
+    label: "8 · Chargers 2021"
+    delete: false
+    format: json
+    files:
+      - name: chargers
+        label: "Chargers project"
+        file: "public/content/chargers.json"
+        fields:
+          - { name: eyebrow, label: "Eyebrow", widget: string }
+          - { name: title, label: "Project title", widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - { name: heading, label: "Lead line (may contain <em>…</em>)", widget: string }
+          - name: meta
+            label: "Meta strip"
+            widget: list
+            fields:
+              - { name: k, label: "Label", widget: string }
+              - { name: v, label: "Value", widget: string }
+          - name: body
+            label: "Body paragraphs"
+            widget: list
+            field: { name: paragraph, label: "Paragraph", widget: text }
+          - name: stats
+            label: "Stats"
+            widget: list
+            fields:
+              - { name: value, label: "Value", widget: string }
+              - { name: label, label: "Label", widget: string }
+          - { name: hero, label: "Cover image", widget: image }
+          - name: images
+            label: "Gallery images"
+            widget: list
+            field: { name: src, label: "Image", widget: image }
+
+  - name: journal
+    label: "9 · Field notes (blog)"
+    delete: false
+    format: json
+    files:
+      - name: journal
+        label: "Posts"
+        file: "public/content/journal.json"
+        fields:
+          - name: posts
+            label: "Posts (newest first)"
+            widget: list
+            summary: "{{title}} — {{date}}"
+            fields:
+              - name: slug
+                label: "Slug"
+                widget: string
+                hint: "URL-safe and unique, e.g. mirrorless-transition-part-2"
+              - { name: title, label: "Headline", widget: string }
+              - name: date
+                label: "Date"
+                widget: string
+                hint: "YYYY-MM-DD"
+              - { name: category, label: "Category", widget: string, default: "Field Notes" }
+              - { name: dek, label: "Dek / summary", widget: text }
+              - { name: image, label: "Cover image", widget: image, required: false }
+              - { name: caption, label: "Image caption / photo credit", widget: string, required: false }
+              - name: body
+                label: "Body"
+                widget: text
+                hint: "Leave a blank line between paragraphs."
+              - name: references
+                label: "Links / references"
+                widget: list
+                required: false
+                fields:
+                  - { name: text, label: "Link text", widget: string }
+                  - { name: url, label: "URL", widget: string }
+
+  - name: press
+    label: "10 · Press"
+    delete: false
+    format: json
+    files:
+      - name: press
+        label: "Coverage"
+        file: "public/content/press.json"
+        fields:
+          - { name: eyebrow, label: "Section eyebrow", widget: string }
+          - { name: title, label: "Section title", widget: string }
+          - { name: subtitle, label: "Section subtitle", widget: text }
+          - name: items
+            label: "Press items"
+            widget: list
+            summary: "{{publication}} — {{title}}"
+            fields:
+              - { name: title, label: "Article title", widget: string }
+              - { name: publication, label: "Publication", widget: string }
+              - { name: date, label: "Date", widget: string, required: false }
+              - { name: summary, label: "Summary", widget: text }
+              - { name: url, label: "Article URL", widget: string }
+
+  - name: insights
+    label: "11 · IMC campaigns"
+    delete: false
+    format: json
+    files:
+      - name: insights
+        label: "Campaign cards"
+        file: "public/content/insights.json"
+        fields:
+          - { name: eyebrow, label: "Section eyebrow", widget: string, required: false }
+          - { name: title, label: "Section title", widget: string }
+          - { name: kicker, label: "Kicker badge", widget: string }
+          - { name: intro, label: "Section intro", widget: text }
+          - name: campaigns
+            label: "Campaigns"
+            widget: list
+            summary: "{{code}} — {{title}}"
+            fields:
+              - { name: code, label: "Number", widget: string }
+              - { name: course, label: "Course", widget: string }
+              - { name: title, label: "Campaign title", widget: string }
+              - { name: objective, label: "Objective", widget: text }
+              - name: pillars
+                label: "Strategic pillars"
+                widget: list
+                field: { name: pillar, label: "Pillar", widget: string }
+              - name: deliverables
+                label: "Key deliverables"
+                widget: list
+                field: { name: deliverable, label: "Deliverable", widget: string }
+              - { name: outcome, label: "Strategic outcome", widget: text }
+          - name: advantage
+            label: "Warrior Communicator Advantage"
+            widget: object
+            fields:
+              - { name: title, label: "Title", widget: string }
+              - { name: body, label: "Body", widget: text }
+              - { name: cta, label: "Call to action", widget: text }
+
+  - name: coursework
+    label: "12 · Coursework"
+    delete: false
+    format: json
+    files:
+      - name: coursework
+        label: "WVU BS+MS coursework"
+        file: "public/content/coursework.json"
+        fields:
+          - { name: eyebrow, label: "Section eyebrow", widget: string }
+          - { name: title, label: "Section title", widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - { name: body, label: "Intro", widget: text }
+          - name: courses
+            label: "Courses"
+            widget: list
+            fields:
+              - { name: code, label: "Course code", widget: string }
+              - { name: title, label: "Course title", widget: string }
+              - { name: instructor, label: "Instructor", widget: string }
+          - name: filters
+            label: "Filter buttons"
+            widget: list
+            field: { name: filter, label: "Filter", widget: string }
+          - name: items
+            label: "Work samples"
+            widget: list
+            summary: "{{title}}"
+            fields:
+              - { name: id, label: "ID", widget: string }
+              - { name: tag, label: "Filter tag", widget: string }
+              - { name: course, label: "Course", widget: string }
+              - { name: unit, label: "Unit", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: summary, label: "Summary", widget: text }
+              - { name: file, label: "Download path", widget: string }
+              - { name: year, label: "Year", widget: string }
+
+  - name: marquee
+    label: "13 · Scrolling credits"
+    delete: false
+    format: json
+    files:
+      - name: marquee
+        label: "Marquee words"
+        file: "public/content/marquee.json"
+        fields:
+          - name: items
+            label: "Words"
+            widget: list
+            field: { name: item, label: "Word", widget: string }

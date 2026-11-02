@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NAV, SITE } from "../data/mock";
+import { useContent } from "../data/ContentProvider";
 import { Button } from "./ui/button";
 
 const Header = () => {
+  const { site: SITE, nav: NAV } = useContent();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -13,6 +15,21 @@ const Header = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const sections = NAV.map((n) => document.getElementById(n.id)).filter(Boolean);
+    if (!sections.length || !("IntersectionObserver" in window)) return undefined;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+    sections.forEach((section) => io.observe(section));
+    return () => io.disconnect();
+  }, [NAV]);
 
   const go = (id) => {
     const el = document.getElementById(id);
@@ -38,12 +55,14 @@ const Header = () => {
           </div>
         </button>
 
-        <nav className="hidden lg:flex items-center gap-9">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-9">
           {NAV.map((n, i) => (
             <button
               key={n.id}
               onClick={() => go(n.id)}
-              className="font-mono-x text-[11px] tracking-[0.25em] text-[#bdb6a5] hover:text-[#c9a961] link-underline"
+              className={`font-mono-x text-[11px] tracking-[0.25em] link-underline transition-colors ${
+                active === n.id ? "text-[#c9a961]" : "text-[#bdb6a5] hover:text-[#c9a961]"
+              }`}
             >
               <span className="text-[#c9a961] mr-2">{String(i + 1).padStart(2, "0")}</span>
               {n.label.toUpperCase()}
